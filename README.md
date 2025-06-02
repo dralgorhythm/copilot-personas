@@ -37,6 +37,14 @@ This repository provides a comprehensive ecosystem of **specialized AI agent per
 
 *Currently in development - implementation specialists will be added soon*
 
+### 📦 Product Agents (1 Specialist)
+
+*Product development, planning, and coordination expertise*
+
+| Persona | Core Focus | Key Features |
+|---------|------------|--------------|
+| [**Project Planning & Documentation Specialist**](./personas/product/projectPlanningSpecialist.md) | Work breakdown, dependency analysis, parallelization | WBS design, critical path optimization, documentation frameworks |
+
 ### 🔬 Research Agents (2 Specialists)
 
 *Research methodology and knowledge synthesis expertise*
@@ -64,6 +72,7 @@ This repository provides a comprehensive ecosystem of **specialized AI agent per
    # Browse available personas by role
    ls personas/design/            # Design and visual communication
    ls personas/implementation/    # Technical implementation (coming soon)
+   ls personas/product/           # Product development and planning
    ls personas/research/          # Research and documentation
    ls personas/prompt-engineering/ # AI interaction and prompt optimization
    ```
@@ -82,6 +91,8 @@ copilot-personas/
 │   ├── 🎨 design/                        # Design and visual communication specialists
 │   │   └── 📋 presentationDesigner.md   # Presentation design specialist
 │   ├── 💻 implementation/                # Technical implementation specialists (coming soon)
+│   ├── 📦 product/                       # Product development and planning specialists
+│   │   └── 📋 projectPlanningSpecialist.md # Project planning and documentation specialist
 │   ├── 🔬 research/                      # Research and documentation specialists
 │   │   ├── 📋 researchAssistant.md      # Research methodology specialist
 │   │   └── 📋 researchDocumentarian.md  # Documentation specialist
