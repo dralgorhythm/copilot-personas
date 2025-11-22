@@ -1,0 +1,291 @@
+{
+  "skills": [
+    {
+      "name": "system-design",
+      "patterns": [
+        "architecture",
+        "system design",
+        "scalability",
+        "diagram",
+        "c4 model"
+      ],
+      "path": ".github/skills/architecture/system-design/SKILL.md"
+    },
+    {
+      "name": "code-implementation",
+      "patterns": [
+        "implement",
+        "write code",
+        "coding",
+        "scripting",
+        "develop feature"
+      ],
+      "path": ".github/skills/core-engineering/code-implementation.md"
+    },
+    {
+      "name": "debugging-troubleshooting",
+      "patterns": [
+        "debug",
+        "fix bug",
+        "troubleshoot",
+        "error",
+        "exception",
+        "stack trace"
+      ],
+      "path": ".github/skills/core-engineering/debugging-troubleshooting.md"
+    },
+    {
+      "name": "dependency-management",
+      "patterns": [
+        "npm",
+        "pip",
+        "maven",
+        "gradle",
+        "dependency",
+        "package",
+        "version upgrade"
+      ],
+      "path": ".github/skills/core-engineering/dependency-management.md"
+    },
+    {
+      "name": "refactoring-optimization",
+      "patterns": [
+        "refactor",
+        "optimize",
+        "clean up",
+        "technical debt",
+        "performance tuning"
+      ],
+      "path": ".github/skills/core-engineering/refactoring-optimization.md"
+    },
+    {
+      "name": "testing-strategy",
+      "patterns": [
+        "unit test",
+        "integration test",
+        "e2e",
+        "test coverage",
+        "jest",
+        "pytest"
+      ],
+      "path": ".github/skills/core-engineering/testing-strategy.md"
+    },
+    {
+      "name": "domain-driven-design",
+      "patterns": [
+        "ddd",
+        "domain driven",
+        "bounded context",
+        "aggregate",
+        "entity"
+      ],
+      "path": ".github/skills/architecture/domain-driven-design.md"
+    },
+    {
+      "name": "cloud-native-patterns",
+      "patterns": [
+        "cloud native",
+        "microservice",
+        "serverless",
+        "lambda",
+        "kubernetes",
+        "12-factor"
+      ],
+      "path": ".github/skills/architecture/cloud-native-patterns.md"
+    },
+    {
+      "name": "api-design",
+      "patterns": [
+        "api design",
+        "rest",
+        "graphql",
+        "grpc",
+        "openapi",
+        "swagger"
+      ],
+      "path": ".github/skills/architecture/api-design.md"
+    },
+    {
+      "name": "capacity-planning",
+      "patterns": [
+        "capacity",
+        "scaling",
+        "throughput",
+        "latency",
+        "load balancing"
+      ],
+      "path": ".github/skills/architecture/capacity-planning.md"
+    },
+    {
+      "name": "infrastructure-as-code",
+      "patterns": [
+        "iac",
+        "terraform",
+        "ansible",
+        "cloudformation",
+        "infrastructure code"
+      ],
+      "path": ".github/skills/operations/infrastructure-as-code.md"
+    },
+    {
+      "name": "observability-monitoring",
+      "patterns": [
+        "observability",
+        "monitoring",
+        "logging",
+        "metrics",
+        "tracing",
+        "prometheus"
+      ],
+      "path": ".github/skills/operations/observability-monitoring.md"
+    },
+    {
+      "name": "incident-management",
+      "patterns": [
+        "incident",
+        "outage",
+        "post-mortem",
+        "rca",
+        "on-call",
+        "alert"
+      ],
+      "path": ".github/skills/operations/incident-management.md"
+    },
+    {
+      "name": "chaos-engineering",
+      "patterns": [
+        "chaos",
+        "fault injection",
+        "resilience testing",
+        "gremlin",
+        "chaos monkey"
+      ],
+      "path": ".github/skills/operations/chaos-engineering.md"
+    },
+    {
+      "name": "app-sec",
+      "patterns": [
+        "appsec",
+        "owasp",
+        "vulnerability",
+        "xss",
+        "injection",
+        "sast"
+      ],
+      "path": ".github/skills/security/app-sec.md"
+    },
+    {
+      "name": "compliance-governance",
+      "patterns": [
+        "compliance",
+        "gdpr",
+        "hipaa",
+        "pci",
+        "soc2",
+        "audit"
+      ],
+      "path": ".github/skills/security/compliance-governance.md"
+    },
+    {
+      "name": "iam-security",
+      "patterns": [
+        "iam",
+        "authn",
+        "authz",
+        "oauth",
+        "oidc",
+        "jwt"
+      ],
+      "path": ".github/skills/security/iam-security.md"
+    },
+    {
+      "name": "threat-modeling",
+      "patterns": [
+        "threat model",
+        "stride",
+        "attack vector",
+        "risk analysis",
+        "spoofing"
+      ],
+      "path": ".github/skills/security/threat-modeling.md"
+    },
+    {
+      "name": "swarm-consensus",
+      "patterns": [
+        "consensus",
+        "agreement",
+        "vote",
+        "decision record",
+        "adr"
+      ],
+      "path": ".github/skills/swarm/swarm-consensus.md"
+    },
+    {
+      "name": "task-decomposition",
+      "patterns": [
+        "break down",
+        "decompose",
+        "sub-task",
+        "milestone",
+        "roadmap"
+      ],
+      "path": ".github/skills/swarm/task-decomposition.md"
+    },
+    {
+      "name": "context-management",
+      "patterns": [
+        "handoff",
+        "context",
+        "shared state",
+        "knowledge transfer",
+        "summary"
+      ],
+      "path": ".github/skills/swarm/context-management.md"
+    },
+    {
+      "name": "agile-methodology",
+      "patterns": [
+        "agile",
+        "scrum",
+        "kanban",
+        "sprint",
+        "standup",
+        "backlog"
+      ],
+      "path": ".github/skills/product/agile-methodology.md"
+    },
+    {
+      "name": "requirements-analysis",
+      "patterns": [
+        "requirement",
+        "spec",
+        "specification",
+        "acceptance criteria",
+        "user need"
+      ],
+      "path": ".github/skills/product/requirements-analysis.md"
+    },
+    {
+      "name": "technical-documentation",
+      "patterns": [
+        "documentation",
+        "docs",
+        "readme",
+        "wiki",
+        "manual"
+      ],
+      "path": ".github/skills/product/technical-documentation.md"
+    },
+    {
+      "name": "estimation-sizing",
+      "patterns": [
+        "estimate",
+        "sizing",
+        "story point",
+        "t-shirt size",
+        "effort"
+      ],
+      "path": ".github/skills/product/estimation-sizing.md"
+    }
+  ]
+}
