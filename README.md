@@ -17,11 +17,9 @@ This folder contains the operational "brain" of the repository. It is designed t
 
 ### 2. Prompt Engineering Research (`prompt-engineering/`)
 
-This folder contains the "source code" for our agent definitions. It houses the research, standards, and templates used to build high-performance agents.
+This folder contains the "source code" for our agent definitions. It houses the templates used to build high-performance agents.
 
-* **Standards**: The [Unified Prompt Engineering Standard (UPEMS)](prompt-engineering/standards/UnifiedPromptEngineeringStandard.md).
-* **Guides**: Documentation on [creating personas](prompt-engineering/guides/creation-process.md) and [optimizing prompts](prompt-engineering/guides/optimization-guide.md).
-* **Templates**: Reusable [YAML/Markdown templates](prompt-engineering/templates/) for defining new agents.
+* **Templates**: Reusable [Markdown templates](templates/) for defining new agents, skills, and instructions.
 
 ## 🚀 Getting Started
 
@@ -33,9 +31,8 @@ This folder contains the "source code" for our agent definitions. It houses the 
 
 ### Creating a New Agent
 
-1. Read the [Persona Creation Process](prompt-engineering/guides/creation-process.md).
-2. Use the [Agent Definition Template](prompt-engineering/templates/agent-definition.yaml).
-3. Register your new agent in `AGENTS.md`.
+1. Use the [Agent Template](templates/agent.md).
+2. Register your new agent in `AGENTS.md`.
 
 ## 🧠 Core Philosophy
 

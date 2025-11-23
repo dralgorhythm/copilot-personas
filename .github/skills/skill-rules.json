@@ -9,7 +9,7 @@
         "diagram",
         "c4 model"
       ],
-      "path": ".github/skills/architecture/system-design/SKILL.md"
+      "path": ".github/skills/architecture/designing-systems.md"
     },
     {
       "name": "code-implementation",
@@ -20,7 +20,7 @@
         "scripting",
         "develop feature"
       ],
-      "path": ".github/skills/core-engineering/code-implementation.md"
+      "path": ".github/skills/core-engineering/implementing-code.md"
     },
     {
       "name": "debugging-troubleshooting",
@@ -32,7 +32,7 @@
         "exception",
         "stack trace"
       ],
-      "path": ".github/skills/core-engineering/debugging-troubleshooting.md"
+      "path": ".github/skills/core-engineering/debugging-and-troubleshooting.md"
     },
     {
       "name": "dependency-management",
@@ -45,7 +45,7 @@
         "package",
         "version upgrade"
       ],
-      "path": ".github/skills/core-engineering/dependency-management.md"
+      "path": ".github/skills/core-engineering/managing-dependencies.md"
     },
     {
       "name": "refactoring-optimization",
@@ -56,7 +56,7 @@
         "technical debt",
         "performance tuning"
       ],
-      "path": ".github/skills/core-engineering/refactoring-optimization.md"
+      "path": ".github/skills/core-engineering/refactoring-and-optimizing.md"
     },
     {
       "name": "testing-strategy",
@@ -68,7 +68,28 @@
         "jest",
         "pytest"
       ],
-      "path": ".github/skills/core-engineering/testing-strategy.md"
+      "path": ".github/skills/core-engineering/testing-software.md"
+    },
+    {
+      "name": "test-driven-development",
+      "patterns": [
+        "tdd",
+        "red green refactor",
+        "test first",
+        "failing test"
+      ],
+      "path": ".github/skills/core-engineering/test-driven-development.md"
+    },
+    {
+      "name": "testing-anti-patterns",
+      "patterns": [
+        "flaky test",
+        "bad test",
+        "anti-pattern",
+        "test smell",
+        "intermittent failure"
+      ],
+      "path": ".github/skills/core-engineering/testing-anti-patterns.md"
     },
     {
       "name": "domain-driven-design",
@@ -79,7 +100,7 @@
         "aggregate",
         "entity"
       ],
-      "path": ".github/skills/architecture/domain-driven-design.md"
+      "path": ".github/skills/architecture/applying-domain-driven-design.md"
     },
     {
       "name": "cloud-native-patterns",
@@ -91,7 +112,7 @@
         "kubernetes",
         "12-factor"
       ],
-      "path": ".github/skills/architecture/cloud-native-patterns.md"
+      "path": ".github/skills/architecture/applying-cloud-native-patterns.md"
     },
     {
       "name": "api-design",
@@ -103,7 +124,7 @@
         "openapi",
         "swagger"
       ],
-      "path": ".github/skills/architecture/api-design.md"
+      "path": ".github/skills/architecture/designing-apis.md"
     },
     {
       "name": "capacity-planning",
@@ -114,7 +135,17 @@
         "latency",
         "load balancing"
       ],
-      "path": ".github/skills/architecture/capacity-planning.md"
+      "path": ".github/skills/architecture/planning-capacity.md"
+    },
+    {
+      "name": "defense-in-depth",
+      "patterns": [
+        "defense in depth",
+        "layered security",
+        "security layers",
+        "redundancy"
+      ],
+      "path": ".github/skills/architecture/defense-in-depth.md"
     },
     {
       "name": "infrastructure-as-code",
@@ -125,7 +156,7 @@
         "cloudformation",
         "infrastructure code"
       ],
-      "path": ".github/skills/operations/infrastructure-as-code.md"
+      "path": ".github/skills/operations/provisioning-infrastructure.md"
     },
     {
       "name": "observability-monitoring",
@@ -137,7 +168,7 @@
         "tracing",
         "prometheus"
       ],
-      "path": ".github/skills/operations/observability-monitoring.md"
+      "path": ".github/skills/operations/monitoring-observability.md"
     },
     {
       "name": "incident-management",
@@ -149,7 +180,18 @@
         "on-call",
         "alert"
       ],
-      "path": ".github/skills/operations/incident-management.md"
+      "path": ".github/skills/operations/managing-incidents.md"
+    },
+    {
+      "name": "root-cause-tracing",
+      "patterns": [
+        "root cause",
+        "rca",
+        "trace error",
+        "5 whys",
+        "underlying cause"
+      ],
+      "path": ".github/skills/operations/root-cause-tracing.md"
     },
     {
       "name": "chaos-engineering",
@@ -160,7 +202,7 @@
         "gremlin",
         "chaos monkey"
       ],
-      "path": ".github/skills/operations/chaos-engineering.md"
+      "path": ".github/skills/operations/performing-chaos-engineering.md"
     },
     {
       "name": "app-sec",
@@ -172,7 +214,7 @@
         "injection",
         "sast"
       ],
-      "path": ".github/skills/security/app-sec.md"
+      "path": ".github/skills/security/securing-applications.md"
     },
     {
       "name": "compliance-governance",
@@ -184,7 +226,7 @@
         "soc2",
         "audit"
       ],
-      "path": ".github/skills/security/compliance-governance.md"
+      "path": ".github/skills/security/ensuring-compliance.md"
     },
     {
       "name": "iam-security",
@@ -196,7 +238,7 @@
         "oidc",
         "jwt"
       ],
-      "path": ".github/skills/security/iam-security.md"
+      "path": ".github/skills/security/managing-identity-and-access.md"
     },
     {
       "name": "threat-modeling",
@@ -207,7 +249,20 @@
         "risk analysis",
         "spoofing"
       ],
-      "path": ".github/skills/security/threat-modeling.md"
+      "path": ".github/skills/security/modeling-threats.md"
+    },
+    {
+      "name": "security-review",
+      "patterns": [
+        "security review",
+        "audit",
+        "scan",
+        "vulnerability",
+        "cve",
+        "sast",
+        "dast"
+      ],
+      "path": ".github/skills/security/reviewing-security.md"
     },
     {
       "name": "swarm-consensus",
@@ -218,7 +273,7 @@
         "decision record",
         "adr"
       ],
-      "path": ".github/skills/swarm/swarm-consensus.md"
+      "path": ".github/skills/product/reaching-consensus.md"
     },
     {
       "name": "task-decomposition",
@@ -229,7 +284,7 @@
         "milestone",
         "roadmap"
       ],
-      "path": ".github/skills/swarm/task-decomposition.md"
+      "path": ".github/skills/product/decomposing-tasks.md"
     },
     {
       "name": "context-management",
@@ -240,7 +295,7 @@
         "knowledge transfer",
         "summary"
       ],
-      "path": ".github/skills/swarm/context-management.md"
+      "path": ".github/skills/product/managing-context.md"
     },
     {
       "name": "agile-methodology",
@@ -252,7 +307,7 @@
         "standup",
         "backlog"
       ],
-      "path": ".github/skills/product/agile-methodology.md"
+      "path": ".github/skills/product/applying-agile-methodology.md"
     },
     {
       "name": "requirements-analysis",
@@ -263,7 +318,18 @@
         "acceptance criteria",
         "user need"
       ],
-      "path": ".github/skills/product/requirements-analysis.md"
+      "path": ".github/skills/product/analyzing-requirements.md"
+    },
+    {
+      "name": "brainstorming",
+      "patterns": [
+        "brainstorm",
+        "ideation",
+        "idea generation",
+        "alternatives",
+        "options"
+      ],
+      "path": ".github/skills/product/brainstorming.md"
     },
     {
       "name": "technical-documentation",
@@ -274,7 +340,7 @@
         "wiki",
         "manual"
       ],
-      "path": ".github/skills/product/technical-documentation.md"
+      "path": ".github/skills/product/writing-technical-documentation.md"
     },
     {
       "name": "estimation-sizing",
@@ -285,7 +351,96 @@
         "t-shirt size",
         "effort"
       ],
-      "path": ".github/skills/product/estimation-sizing.md"
+      "path": ".github/skills/product/estimating-work.md"
+    },
+    {
+      "name": "python-development",
+      "patterns": [
+        "python",
+        ".py",
+        "pip",
+        "pytest",
+        "django",
+        "flask",
+        "fastapi",
+        "pandas"
+      ],
+      "path": ".github/skills/languages/writing-python.md"
+    },
+    {
+      "name": "go-development",
+      "patterns": [
+        "golang",
+        "go",
+        ".go",
+        "goroutine",
+        "channel",
+        "gin",
+        "gorm"
+      ],
+      "path": ".github/skills/languages/writing-go.md"
+    },
+    {
+      "name": "java-development",
+      "patterns": [
+        "java",
+        ".java",
+        "spring",
+        "springboot",
+        "maven",
+        "gradle",
+        "junit"
+      ],
+      "path": ".github/skills/languages/writing-java.md"
+    },
+    {
+      "name": "typescript-development",
+      "patterns": [
+        "typescript",
+        ".ts",
+        ".tsx",
+        "node",
+        "react",
+        "nextjs",
+        "express"
+      ],
+      "path": ".github/skills/languages/writing-typescript.md"
+    },
+    {
+      "name": "rust-development",
+      "patterns": [
+        "rust",
+        ".rs",
+        "cargo",
+        "tokio",
+        "async rust",
+        "actix"
+      ],
+      "path": ".github/skills/languages/writing-rust.md"
+    },
+    {
+      "name": "bash-scripting",
+      "patterns": [
+        "bash",
+        "shell",
+        ".sh",
+        "shellcheck",
+        "automation script",
+        "cli script"
+      ],
+      "path": ".github/skills/languages/writing-bash.md"
+    },
+    {
+      "name": "terraform-iac",
+      "patterns": [
+        "terraform",
+        ".tf",
+        "hcl",
+        "tfvars",
+        "terraform module",
+        "infrastructure code"
+      ],
+      "path": ".github/skills/languages/writing-terraform.md"
     }
   ]
 }
