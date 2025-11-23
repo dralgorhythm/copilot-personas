@@ -7,6 +7,7 @@ description: Breaking down complex requirements or architectural designs into ac
 
 ## Workflows
 <!-- Checklist for complex tasks -->
+- [ ] **Small Batches**: Is the work broken down into the smallest possible units to reduce holding cost?
 - [ ] **Sizing**: Is each task estimated to take < 1 hour (or 1 turn)?
 - [ ] **Dependencies**: Are blockers explicitly listed?
 - [ ] **Verification**: Does each task have a "Definition of Done"?

@@ -99,4 +99,5 @@ class UserService {
 
 ## Resources
 <!-- Links to external docs or local reference files -->
-- [Implementing Code Instructions](../../instructions/implementing-code.instructions.md)
+- [Core Engineering Instructions](../../instructions/core-engineering.instructions.md)
+

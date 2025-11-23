@@ -441,6 +441,98 @@
         "infrastructure code"
       ],
       "path": ".github/skills/languages/writing-terraform.md"
+    },
+    {
+      "name": "managing-data",
+      "patterns": [
+        "data management",
+        "database strategy",
+        "neon",
+        "r2",
+        "d1",
+        "object storage",
+        "edge sql"
+      ],
+      "path": ".github/skills/core-engineering/managing-data.md"
+    },
+    {
+      "name": "deploy-cloudflare",
+      "patterns": [
+        "cloudflare pages",
+        "deploy frontend",
+        "static site",
+        "spa deploy"
+      ],
+      "path": ".github/skills/operations/deploy-to-cloudflare-pages.md"
+    },
+    {
+      "name": "deploy-railway",
+      "patterns": [
+        "railway",
+        "deploy backend",
+        "railway.toml",
+        "nixpacks"
+      ],
+      "path": ".github/skills/operations/deploy-to-railway.md"
+    },
+    {
+      "name": "secrets-management",
+      "patterns": [
+        "doppler",
+        "secrets",
+        "env vars",
+        "environment variables",
+        "config management"
+      ],
+      "path": ".github/skills/security/manage-secrets-doppler.md"
+    },
+    {
+      "name": "database-management",
+      "patterns": [
+        "neon",
+        "postgres",
+        "serverless db",
+        "database branching",
+        "provision database"
+      ],
+      "path": ".github/skills/architecture/manage-database-neon.md"
+    },
+    {
+      "name": "designing-interfaces",
+      "patterns": [
+        "ui design",
+        "ux design",
+        "interface",
+        "layout",
+        "typography",
+        "color palette",
+        "figma"
+      ],
+      "path": ".github/skills/design/designing-interfaces.md"
+    },
+    {
+      "name": "creating-visual-assets",
+      "patterns": [
+        "generate image",
+        "create icon",
+        "illustration",
+        "svg",
+        "visual asset",
+        "logo"
+      ],
+      "path": ".github/skills/design/creating-visual-assets.md"
+    },
+    {
+      "name": "ensuring-accessibility",
+      "patterns": [
+        "accessibility",
+        "a11y",
+        "wcag",
+        "screen reader",
+        "contrast ratio",
+        "aria"
+      ],
+      "path": ".github/skills/design/ensuring-accessibility.md"
     }
   ]
 }

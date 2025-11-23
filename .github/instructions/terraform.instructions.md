@@ -9,19 +9,28 @@ You are writing Terraform (HCL) code. Adhere to the following strict standards.
 3.  **Naming**: Use snake_case for resource names. Include resource type prefix (e.g., `aws_vpc`).
 4.  **Variables**: Define all inputs in `variables.tf`, outputs in `outputs.tf`.
 5.  **State**: Always use remote state with locking (e.g., S3 + DynamoDB, Terraform Cloud).
+6.  **Secrets**: Never hardcode secrets. Use variables with `sensitive = true` or external secret managers.
+7.  **Least Privilege**: IAM policies should grant minimum required permissions.
+8.  **Encryption**: Enable encryption at rest and in transit for all data stores.
+9.  **Public Access**: Block public access by default unless explicitly required.
 </coding_standards>
 
-## <security_standards>
-*   **Secrets**: Never hardcode secrets. Use variables with `sensitive = true` or external secret managers.
-*   **Least Privilege**: IAM policies should grant minimum required permissions.
-*   **Encryption**: Enable encryption at rest and in transit for all data stores.
-*   **Public Access**: Block public access by default unless explicitly required.
-</security_standards>
+## <best_practices>
+1.  **Plan Review**: Always review `terraform plan` output before applying.
+</best_practices>
 
-## <validation_protocols>
-*   **Format**: Run `terraform fmt` before committing.
-*   **Validate**: Run `terraform validate` to check syntax.
-*   **Lint**: Use `tflint` for best practices and provider-specific rules.
-*   **Security Scan**: Use `checkov` or `tfsec` to detect security issues.
-*   **Plan Review**: Always review `terraform plan` output before applying.
-</validation_protocols>
+## <testing_protocols>
+1.  **Format**: Run `terraform fmt` before committing.
+2.  **Validate**: Run `terraform validate` to check syntax.
+</testing_protocols>
+
+## <tooling>
+*   **Lint**: `tflint` (Best practices and provider-specific rules).
+*   **Security Scan**: `checkov` or `tfsec` (Detect security issues).
+</tooling>
+
+## <concepts>
+1.  **Immutable Infrastructure**: Replace servers rather than modifying them in place.
+2.  **Infrastructure as Code**: Manage infrastructure using configuration files.
+</concepts>
+

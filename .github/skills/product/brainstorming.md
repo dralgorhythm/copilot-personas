@@ -49,4 +49,5 @@ description: Facilitating structured ideation sessions to explore alternatives a
 ## Resources
 <!-- Links to external docs or local reference files -->
 - [Analyzing Requirements](./analyzing-requirements.md)
-- [Reaching Consensus](./reaching-consensus.md)
+- [Product Instructions](../../instructions/product.instructions.md)
+

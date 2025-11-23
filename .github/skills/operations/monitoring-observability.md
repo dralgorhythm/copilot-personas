@@ -16,11 +16,11 @@ description: The ability to understand the internal state of a system based on i
 ## Feedback Loops
 <!-- Validation steps -->
 1. Instrument code (OpenTelemetry).
-2. Deploy to staging.
-3. Generate traffic.
-4. Verify logs in aggregator (Loki/ELK).
-5. Verify metrics in dashboard (Grafana).
-6. Verify traces (Jaeger/Tempo).
+2. Local: Run `docker run ... aspire-dashboard`.
+3. Local: Verify traces in Aspire Dashboard (http://localhost:18888).
+4. Deploy to staging.
+5. Generate traffic.
+6. Verify logs/metrics in Grafana Cloud or Datadog.
 
 ## Utility Scripts
 <!-- Reference executable scripts -->
@@ -45,20 +45,26 @@ scrape_configs:
 ## Reference Implementation
 <!-- Code patterns -->
 
-### OpenTelemetry Instrumention (Node.js)
+### OpenTelemetry Instrumentation (Node.js)
 
-Demonstrates setting up tracing and metrics.
+Demonstrates setting up tracing and metrics using the OTLP exporter (Unified Signal Graph).
 
 ```javascript
 // instrumentation.js
 const { NodeSDK } = require('@opentelemetry/sdk-node');
 const { getNodeAutoInstrumentations } = require('@opentelemetry/auto-instrumentations-node');
-const { PrometheusExporter } = require('@opentelemetry/exporter-prometheus');
+const { OTLPTraceExporter } = require('@opentelemetry/exporter-trace-otlp-grpc');
+const { OTLPMetricExporter } = require('@opentelemetry/exporter-metrics-otlp-grpc');
+const { PeriodicExportingMetricReader } = require('@opentelemetry/sdk-metrics');
 
 const sdk = new NodeSDK({
-  traceExporter: new ConsoleSpanExporter(),
-  metricReader: new PrometheusExporter({
-    port: 9464,
+  traceExporter: new OTLPTraceExporter({
+    // Default: localhost:4317
+  }),
+  metricReader: new PeriodicExportingMetricReader({
+    exporter: new OTLPMetricExporter({
+      // Default: localhost:4317
+    }),
   }),
   instrumentations: [getNodeAutoInstrumentations()],
 });

@@ -2,11 +2,10 @@
 name: agent-name
 description: Short description of the agent's purpose.
 argument-hint: Optional hint shown in agent selector
-tools: ['tool-1', 'tool-2']  # or ["*"] for all tools, or omit entirely
 handoffs:
   - label: Next Step
     agent: other-agent
-    prompt: Continue with the next phase...
+    prompt: I have completed [Task A] and created `artifacts/[artifact-name].md`. Please proceed with [Task B].
     send: false
 ---
 

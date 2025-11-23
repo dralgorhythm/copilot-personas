@@ -58,4 +58,8 @@ Review the system for compliance gaps.
 
 * **Trigger**: Quarterly or Annually.
 * **Action**: Manual review of policies, procedures, and evidence.
-* **Outcome**: Audit report and corrective action plan.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Compliance Instructions](../../instructions/compliance-governance.instructions.md)
+

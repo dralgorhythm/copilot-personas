@@ -17,6 +17,7 @@ This repository defines a set of specialized personas located in `.github/agents
 | **Reviewer** | Quality Assurance | Code Review, Security Audits, Performance Analysis | PR reviews, security checks, optimization |
 | **Site Reliability Engineer** | Infrastructure | Cloud Arch, DevOps, Observability | Infrastructure as Code, Deployment pipelines, Reliability |
 | **Security Auditor** | Security | Vulnerability Scanning, Threat Modeling | Security hardening, penetration testing scenarios |
+| **UI/UX Designer** | Design | UI/UX, Visual Assets, Accessibility | Designing interfaces, creating graphics, ensuring accessibility |
 
 ## Agent Registry
 
@@ -27,6 +28,7 @@ This repository defines a set of specialized personas located in `.github/agents
 *   **[Reviewer](.github/agents/reviewer.agent.md)**: Code quality and security assurance.
 *   **[Site Reliability Engineer](.github/agents/site-reliability-engineer.agent.md)**: Infrastructure and platform engineering.
 *   **[Security Auditor](.github/agents/security-auditor.agent.md)**: Security compliance and risk assessment.
+*   **[UI/UX Designer](.github/agents/ui-ux-designer.agent.md)**: UI/UX design, visual assets, and accessibility.
 
 ## Standards & Frameworks
 
@@ -45,26 +47,30 @@ The following context modules are available in `.github/instructions/`. Agents s
 
 * `api-design`, `cloud-native`, `ddd` (Domain-Driven Design)
 * `infrastructure-as-code`, `system-design`, `requirements-analysis`
+* `tech-strategy`, `database`
 
-### Quality & Testing
+### Core Engineering & Quality
 
-* `debugging`, `refactoring`, `testing`, `technical-documentation`
-* `output-standards`
+* `core-engineering` (Unified Coding Lifecycle)
+* `testing`, `technical-documentation`, `output-standards`
 
 ### Security & Compliance
 
-* `application-security`, `compliance-governance`, `iam-security`
-* `security`, `security-review`, `threat-modeling`
+* `security` (Unified Security Policy)
+* `compliance-governance`
 
 ### Operations & SRE
 
 * `capacity-planning`, `chaos-engineering`, `incident-management`
-* `observability`, `swarm-consensus`
+* `observability`
 
-### Process & Methodology
 
+### Product & Methodology
+
+* `product` (Product Operating Model)
 * `agile-methodology`, `core-values`, `task-decomposition`
-* `context-management`, `prompt-engineering`
+* `prompt-engineering`, `ui-ux-design`
+
 
 ## Available Skills
 
@@ -89,16 +95,25 @@ Skills are modular capabilities located in `.github/skills/`. Agents can adopt t
 
 * `managing-incidents`, `monitoring-observability`, `performing-chaos-engineering`
 * `provisioning-infrastructure`, `root-cause-tracing`
+* `deploy-to-cloudflare-pages`, `deploy-to-railway`
+
 
 ### Product
 
 * `analyzing-requirements`, `applying-agile-methodology`, `decomposing-tasks`
 * `estimating-work`, `writing-technical-documentation`
+* `brainstorming`, `managing-context`, `reaching-consensus`
+
 
 ### Security
 
 * `ensuring-compliance`, `managing-identity-and-access`, `modeling-threats`
-* `reviewing-security`, `securing-applications`
+* `reviewing-security`, `securing-applications`, `manage-secrets-doppler`
+
+### Design
+
+* `designing-interfaces`, `creating-visual-assets`, `ensuring-accessibility`
+
 
 ## Workflow Instructions
 
@@ -109,4 +124,5 @@ Skills are modular capabilities located in `.github/skills/`. Agents can adopt t
 
 ## Development
 
-* Use the [Agent Template](prompt-engineering/templates/agent.md) to ensure consistency.
+* Use the [Agent Template](templates/agent.md) to ensure consistency.
+

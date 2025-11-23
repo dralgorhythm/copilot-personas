@@ -72,4 +72,5 @@ Use this structure when passing control.
 
 ## Resources
 <!-- Links to external docs or local reference files -->
-- [Context Management Instructions](../../instructions/context-management.instructions.md)
+- [Prompt Engineering Instructions](../../instructions/prompt-engineering.instructions.md)
+

@@ -7,6 +7,7 @@ description: Estimating effort, complexity, and risk for tasks to enable predict
 
 ## Workflows
 <!-- Checklist for complex tasks -->
+- [ ] **Cost of Delay**: Have we estimated the economic impact of delay (CoD)?
 - [ ] **Understanding**: Does everyone understand the requirement?
 - [ ] **Risks**: Have technical risks been identified?
 - [ ] **Dependencies**: Are there external blockers?

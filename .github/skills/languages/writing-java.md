@@ -30,30 +30,42 @@ curl https://start.spring.io/starter.zip \
   -d dependencies=web,data-jpa,validation,actuator \
   -d type=maven-project \
   -d language=java \
-  -d bootVersion=3.2.0 \
+  -d bootVersion=4.0.0 \
   -d baseDir="$ARTIFACT_ID" \
   -d groupId=com.example \
   -d artifactId="$ARTIFACT_ID" \
   -d name="$ARTIFACT_ID" \
   -d packageName="$PACKAGE_NAME" \
-  -d javaVersion=17 \
+  -d javaVersion=25 \
   -o "$ARTIFACT_ID.zip"
 
 unzip "$ARTIFACT_ID.zip"
 rm "$ARTIFACT_ID.zip"
 
+# Create Dockerfile with Java 25 and GenZGC
+cat <<EOF > Dockerfile
+FROM eclipse-temurin:25-jre-alpine
+WORKDIR /app
+COPY target/*.jar app.jar
+# Enable Generational ZGC for low latency
+ENV JAVA_OPTS="-XX:+UseZGC -XX:+ZGenerational"
+ENTRYPOINT ["sh", "-c", "java \$JAVA_OPTS -jar app.jar"]
+EOF
+
 echo "Spring Boot project created: $ARTIFACT_ID"
+echo "Added: Dockerfile with Java 25 + GenZGC"
 ```
 
 ### 2. Java Code Review
 
 Review Java code for modern practices and Spring conventions.
 
-1. **Version Check**: Is Java 17+ features (Records, Switch Expressions) used?
+1. **Version Check**: Is Java 25+ features (Records, Virtual Threads, Switch Expressions) used?
 2. **Injection Check**: Is constructor injection used instead of field injection?
 3. **Null Check**: Is `Optional` used correctly to avoid NPEs?
 4. **Stream Check**: Are Streams used for collection processing where appropriate?
 5. **Test Check**: Are tests written with JUnit 5 and Mockito?
+6. **SBOM Check**: Is CycloneDX SBOM generation configured in the build?
 
 ## Feedback Loops
 
@@ -67,4 +79,8 @@ Review Java code for modern practices and Spring conventions.
 
 * **Trigger**: CI Pipeline.
 * **Action**: Run SonarQube or Checkstyle.
-* **Outcome**: Maintain code quality and adherence to standards.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Java Instructions](../../instructions/java.instructions.md)
+

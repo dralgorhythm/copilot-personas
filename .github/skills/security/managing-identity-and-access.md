@@ -63,4 +63,8 @@ Review IAM configurations for security best practices.
 
 * **Trigger**: Spike in failed login attempts.
 * **Action**: Alert security team and potentially block IP addresses.
-* **Outcome**: Detection and prevention of brute-force or credential stuffing attacks.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Security Instructions](../../instructions/security.instructions.md)
+

@@ -97,4 +97,5 @@ process_request("user_123")
 
 ## Resources
 <!-- Links to external docs or local reference files -->
-- [Debugging Instructions](../../instructions/debugging.instructions.md)
+- [Core Engineering Instructions](../../instructions/core-engineering.instructions.md)
+

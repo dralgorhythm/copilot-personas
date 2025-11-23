@@ -14,12 +14,13 @@ This folder contains the operational "brain" of the repository. It is designed t
 * **`AGENTS.md`**: The central registry of available personas and their capabilities.
 * **`agents/`**: Individual persona definitions (e.g., `architect.agent.md`, `builder.agent.md`).
 * **`instructions/`**: Context-aware rules injected based on file types (e.g., TypeScript rules, Security rules).
+* **`skills/`**: Modular capabilities and workflows that agents can adopt (e.g., `refactoring`, `debugging`).
 
-### 2. Prompt Engineering Research (`prompt-engineering/`)
 
-This folder contains the "source code" for our agent definitions. It houses the templates used to build high-performance agents.
+### 2. Templates (`templates/`)
 
-* **Templates**: Reusable [Markdown templates](templates/) for defining new agents, skills, and instructions.
+This folder contains the reusable [Markdown templates](templates/) for defining new agents, skills, and instructions.
+
 
 ## 🚀 Getting Started
 

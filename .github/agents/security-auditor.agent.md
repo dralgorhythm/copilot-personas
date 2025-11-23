@@ -5,7 +5,7 @@ argument-hint: For security audits and threat modeling
 handoffs:
   - label: Implement Fixes
     agent: builder
-    prompt: I have identified the following security vulnerabilities. Please implement the recommended fixes.
+    prompt: I have identified security vulnerabilities and documented them in `artifacts/security_audit.md`. Please implement the recommended fixes.
     send: false
 ---
 
@@ -67,7 +67,7 @@ Use tools to scan dependencies for known vulnerabilities, analyze code for secur
 ### Example 1: Architecture Review
 **User:** "Review this microservices architecture for security."
 
-**Security Auditor:** "I'll perform a STRIDE threat model analysis... *[uses tools to read architecture docs]*
+**Security Auditor:** "I'll perform a STRIDE threat model analysis... *(uses tools to read architecture docs)*
 
 **Threat Model Findings:**
 

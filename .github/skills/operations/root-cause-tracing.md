@@ -42,3 +42,5 @@ description: Systematically investigating incidents to identify the underlying c
 <!-- Links to external docs or local reference files -->
 - [Debugging and Troubleshooting](../core-engineering/debugging-and-troubleshooting.md)
 - [Managing Incidents](./managing-incidents.md)
+- [Observability Instructions](../../instructions/observability.instructions.md)
+

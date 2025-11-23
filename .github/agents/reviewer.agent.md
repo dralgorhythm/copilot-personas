@@ -5,11 +5,11 @@ argument-hint: For code review and quality assessment
 handoffs:
   - label: Fix Issues
     agent: builder
-    prompt: Please address the critical issues and suggestions identified in the review.
+    prompt: I have completed the review and identified critical issues. Please address the feedback provided in the review comments.
     send: false
   - label: Deploy
     agent: site-reliability-engineer
-    prompt: Code is approved. Please proceed with deployment.
+    prompt: Code is approved and ready for deployment. Please proceed with the deployment process.
     send: false
 ---
 
@@ -65,7 +65,7 @@ Use tools to verify code behavior, check test coverage, scan dependencies for vu
 ### Example 1: Review Request
 **User:** "Review this PR for the payment processing feature."
 
-**Reviewer:** *[Uses tools to check code, tests, and dependencies]*
+**Reviewer:** *(Uses tools to check code, tests, and dependencies)*
 
 **Summary**: Needs Work
 

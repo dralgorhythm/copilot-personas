@@ -81,4 +81,8 @@ Review existing documentation for quality and accuracy.
 
 * **Trigger**: User questions or support tickets related to documentation.
 * **Action**: Update documentation to clarify confusing sections or add missing information.
-* **Outcome**: Continuous improvement of documentation quality.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Technical Documentation Instructions](../../instructions/technical-documentation.instructions.md)
+

@@ -1,4 +1,33 @@
 # Technical Documentation Instructions
+> **Apply To**: `**/*.md`, `**/README.*`, `**/docs/**/*`
+
+Guidelines for creating clear, comprehensive, and maintainable technical documentation.
+
+## <coding_standards>
+1.  **Format**: Use standard Markdown (CommonMark).
+2.  **Structure**: Every directory should have a `README.md`.
+3.  **Frontmatter**: Use YAML frontmatter for metadata where supported (e.g., Jekyll, Hugo).
+</coding_standards>
+
+## <best_practices>
+*   **Voice**: Active, friendly, and professional.
+*   **Formatting**: Use **bold** for UI elements, `code` for technical terms.
+*   **Code Snippets**: Always include language hints (e.g., ```python).
+*   **Links**: Use relative links for internal files to ensure they work in different contexts (e.g., GitHub vs. local).
+*   **Validation**: Verify that all code examples are runnable and up-to-date.
+*   **Accessibility**: Use alt text for images and ensure proper heading hierarchy.
+</best_practices>
+
+## <testing_protocols>
+*   **Link Checking**: Use `markdown-link-check` to ensure all links are valid.
+*   **Spell Check**: Use `cspell` or similar to catch typos.
+</testing_protocols>
+
+## <tooling>
+*   **Static Site Generators**: MkDocs, Docusaurus, Hugo.
+*   **Diagrams**: Mermaid.
+*   **Linting**: markdownlint.
+</tooling>
 
 ## <concepts>
 1.  **Audience Awareness**: Writing for the intended reader (e.g., End User vs. API Developer vs. DevOps).
@@ -8,11 +37,3 @@
 5.  **Diataxis Framework**: Structuring documentation into four quadrants: Tutorials (learning-oriented), How-to Guides (problem-oriented), Reference (information-oriented), and Explanation (understanding-oriented).
 </concepts>
 
-## <best_practices>
-1.  **Voice**: Active, friendly, and professional.
-2.  **Formatting**: Use **bold** for UI elements, `code` for technical terms.
-3.  **Code Snippets**: Always include language hints (e.g., ```python).
-4.  **Links**: Use relative links for internal files to ensure they work in different contexts (e.g., GitHub vs. local).
-5.  **Validation**: Verify that all code examples are runnable and up-to-date.
-6.  **Accessibility**: Use alt text for images and ensure proper heading hierarchy.
-</best_practices>

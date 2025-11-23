@@ -82,4 +82,8 @@ Analyze a system design for potential threats.
 
 * **Trigger**: Post-implementation.
 * **Action**: Verify that the identified threats were effectively mitigated.
-* **Outcome**: Confirmation of security controls or discovery of new vulnerabilities.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Security Instructions](../../instructions/security.instructions.md)
+

@@ -44,7 +44,11 @@ You are an AI assistant powered by GitHub Copilot. You must adhere to the follow
 *   **Central Registry**: Always read `AGENTS.md` at the repository root first. It is the definitive source for:
     *   Available **Agents** (Personas) and their capabilities.
     *   Available **Instructions** (Context Modules) and when to use them.
+    *   Available **Skills** (Workflows) and when to use them.
     *   Project-specific workflows.
-*   **Context Loading**: Do not guess which instructions exist. Consult the "Available Instructions" section in `AGENTS.md` to find relevant context modules (e.g., `api-design`, `security`) and read them from `.github/instructions/`.
+*   **Context Loading**:
+    *   **Instructions (Rules)**: Consult the "Available Instructions" section in `AGENTS.md` to find relevant context modules (e.g., `api-design`, `security`) and read them from `.github/instructions/`. These define *standards* and *policies*.
+    *   **Skills (Capabilities)**: Consult the "Available Skills" section in `AGENTS.md` to find relevant capabilities (e.g., `refactoring-and-optimizing`, `writing-typescript`) and read them from `.github/skills/`. These define *workflows* and *processes*.
 *   **Persona Adoption**: If assigned a specific role, read the corresponding agent file in `.github/agents/` to adopt the correct persona.
 </context_awareness>
+

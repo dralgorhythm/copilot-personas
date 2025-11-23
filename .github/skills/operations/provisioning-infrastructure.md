@@ -1,74 +1,108 @@
 ---
 name: provisioning-infrastructure
-description: The ability to design, deploy, and manage infrastructure using code, ensuring reproducibility, scalability, and security.
+description: The ability to design, deploy, and manage infrastructure using code, following the Graduated Hosting Strategy with SST v3 (Ion).
 ---
 
 # Provisioning Infrastructure
 
 ## Workflows
 <!-- Checklist for complex tasks -->
-- [ ] **State**: Is remote state configured with locking (e.g., S3 + DynamoDB)?
-- [ ] **Secrets**: Are secrets managed externally (e.g., AWS Secrets Manager) and not committed?
-- [ ] **Review**: Has a `terraform plan` been reviewed before apply?
+- [ ] **Hosting Tier**: Which tier is this for? (Static/Cloudflare Pages, Agile/Railway, Production/AWS Fargate)
+- [ ] **IaC Tool**: Is SST v3 (Ion) being used for AWS infrastructure?
+- [ ] **Secrets**: Are secrets managed via Doppler and not committed?
+- [ ] **Review**: Has the infrastructure plan been reviewed before deployment?
 - [ ] **Tagging**: Are resources tagged with Owner, Environment, and CostCenter?
 - [ ] **Backup**: Is deletion protection enabled for stateful resources (DBs, Buckets)?
 
 ## Feedback Loops
 <!-- Validation steps -->
-1. Write IaC code.
-2. Run linter (`tflint`).
-3. Run security scan (`tfsec`).
-4. Run plan (`terraform plan`).
+1. Write IaC code (SST v3 TypeScript or Terraform).
+2. Run linter (`biome` for SST, `tflint` for Terraform).
+3. Run security scan (`tfsec` for Terraform).
+4. Run plan/preview (`sst deploy --stage dev` or `terraform plan`).
 5. Apply to staging.
 6. Verify.
 
 ## Utility Scripts
 <!-- Reference executable scripts -->
-- `scaffold-terraform.sh`: Creates a standard Terraform module structure.
+- `scaffold-sst-project.sh`: Creates a standard SST v3 project structure.
 
 ```bash
 #!/bin/bash
-# scaffold-terraform.sh
-# Usage: ./scaffold-terraform.sh <ModuleName>
+# scaffold-sst-project.sh
+# Usage: ./scaffold-sst-project.sh <ProjectName>
 
-MODULE_NAME=$1
+PROJECT_NAME=$1
 
-if [ -z "$MODULE_NAME" ]; then
-  echo "Usage: $0 <ModuleName>"
+if [ -z "$PROJECT_NAME" ]; then
+  echo "Usage: $0 <ProjectName>"
   exit 1
 fi
 
-mkdir -p "terraform/$MODULE_NAME"
+mkdir -p "$PROJECT_NAME"
+cd "$PROJECT_NAME"
 
-# Create Standard Files
-touch "terraform/$MODULE_NAME/main.tf"
-touch "terraform/$MODULE_NAME/variables.tf"
-touch "terraform/$MODULE_NAME/outputs.tf"
-touch "terraform/$MODULE_NAME/versions.tf"
-touch "terraform/$MODULE_NAME/README.md"
+# Initialize SST project
+pnpm create sst@latest
 
-# Populate versions.tf
-cat <<EOF > "terraform/$MODULE_NAME/versions.tf"
-terraform {
-  required_version = ">= 1.0"
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
+# Create Doppler config reference
+cat <<EOF > .env.example
+# Use Doppler for secrets management
+# Run: doppler run -- sst deploy
+DOPPLER_TOKEN=<your-token>
 EOF
 
-echo "Scaffolding complete for Terraform module: $MODULE_NAME"
+echo "SST v3 project scaffolded: $PROJECT_NAME"
+echo "Next steps:"
+echo "1. Configure Doppler: doppler setup"
+echo "2. Deploy to dev: doppler run -- sst deploy --stage dev"
 ```
 
 ## Reference Implementation
 <!-- Code patterns -->
 
-### Secure S3 Bucket (Terraform)
+### Secure S3 Bucket (SST v3)
 
-Demonstrates encryption, versioning, and blocking public access.
+Demonstrates encryption, versioning, and blocking public access using SST.
+
+```typescript
+// sst.config.ts
+import { Bucket } from "sst/constructs";
+
+export default {
+  config() {
+    return {
+      name: "my-app",
+      region: "us-east-1",
+    };
+  },
+  stacks(app) {
+    app.stack(function Stack({ stack }) {
+      // Secure S3 Bucket with SST
+      const bucket = new Bucket(stack, "SecureBucket", {
+        cdk: {
+          bucket: {
+            versioned: true,
+            encryption: s3.BucketEncryption.S3_MANAGED,
+            blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
+            removalPolicy: stack.stage === "prod" 
+              ? RemovalPolicy.RETAIN 
+              : RemovalPolicy.DESTROY,
+          },
+        },
+      });
+
+      stack.addOutputs({
+        BucketName: bucket.bucketName,
+      });
+    });
+  },
+};
+```
+
+### Terraform Alternative (Legacy)
+
+For teams not yet on SST, here's the Terraform equivalent:
 
 ```hcl
 # main.tf
@@ -118,3 +152,6 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 ## Resources
 <!-- Links to external docs or local reference files -->
 - [Infrastructure as Code Instructions](../../instructions/infrastructure-as-code.instructions.md)
+- [SST v3 Documentation](https://sst.dev)
+- [Doppler Documentation](https://docs.doppler.com)
+

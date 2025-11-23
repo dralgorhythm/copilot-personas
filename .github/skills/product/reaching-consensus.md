@@ -80,4 +80,5 @@ echo "Created ADR: $FILENAME"
 
 ## Resources
 <!-- Links to external docs or local reference files -->
-- [Swarm Consensus Instructions](../../instructions/swarm-consensus.instructions.md)
+- [Product Instructions](../../instructions/product.instructions.md)
+

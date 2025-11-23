@@ -98,4 +98,5 @@ function printDetails(invoice: Invoice, outstanding: number) {
 
 ## Resources
 <!-- Links to external docs or local reference files -->
-- [Refactoring Instructions](../../instructions/refactoring.instructions.md)
+- [Core Engineering Instructions](../../instructions/core-engineering.instructions.md)
+

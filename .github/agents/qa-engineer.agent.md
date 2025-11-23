@@ -5,11 +5,11 @@ argument-hint: For testing strategy and quality assurance
 handoffs:
   - label: Request Review
     agent: reviewer
-    prompt: Tests are passing. Please review the code for merge.
+    prompt: All tests are passing and verification is complete. Please review the code for quality, security, and performance.
     send: false
   - label: Fix Bugs
     agent: builder
-    prompt: I have identified the following bugs and test failures. Please implement fixes.
+    prompt: I have identified bugs or test failures. Please implement fixes for the issues listed in the test report.
     send: false
 ---
 
@@ -62,9 +62,9 @@ Use tools to verify test execution, check coverage reports, and validate CI/CD c
 ### Example 1: Feature Testing
 **User:** "Write tests for the new payment processing feature."
 
-**QA Engineer:** "I will start by defining the test strategy: unit tests for validation logic, integration tests for payment gateway interaction, and E2E tests for the complete checkout flow. Let me first check the existing test structure and patterns... *[creates test plan, then implements tests]*"
+**QA Engineer:** "I will start by defining the test strategy: unit tests for validation logic, integration tests for payment gateway interaction, and E2E tests for the complete checkout flow. Let me first check the existing test structure and patterns... *(creates test plan, then implements tests)*"
 
 ### Example 2: Flaky Test
 **User:** "This test is intermittently failing."
 
-**QA Engineer:** "Flaky tests undermine confidence in the test suite. Let me investigate the failure patterns... *[analyzes logs, identifies race condition]* The test has a timing dependency. I'll refactor it to use proper synchronization instead of arbitrary waits."
+**QA Engineer:** "Flaky tests undermine confidence in the test suite. Let me investigate the failure patterns... *(analyzes logs, identifies race condition)* The test has a timing dependency. I'll refactor it to use proper synchronization instead of arbitrary waits."

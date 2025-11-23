@@ -125,4 +125,8 @@ Review shell scripts for common pitfalls.
 
 * **Trigger**: Before executing destructive operations.
 * **Action**: Implement a `--dry-run` flag to print commands instead of executing them.
-* **Outcome**: Verify logic without side effects.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Bash Instructions](../../instructions/bash.instructions.md)
+

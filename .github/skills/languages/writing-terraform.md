@@ -1,6 +1,6 @@
 ---
 name: Writing Terraform
-description: Designing and implementing cloud infrastructure using Terraform's declarative configuration language (HCL) with best practices for security and maintainability.
+description: Designing and implementing cloud infrastructure using Terraform's declarative configuration language (HCL). Note: This is primarily for legacy or strict compliance workloads. New AWS infrastructure should use SST v3 (Ion).
 ---
 
 # Writing Terraform
@@ -133,4 +133,8 @@ echo "Terraform module scaffolded: $MODULE_NAME"
 
 * **Trigger**: CI/CD.
 * **Action**: Run `trivy config .` or `tfsec`.
-* **Outcome**: Detect security misconfigurations.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Terraform Instructions](../../instructions/terraform.instructions.md)
+

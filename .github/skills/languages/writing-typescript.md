@@ -9,7 +9,7 @@ description: Writing type-safe, maintainable TypeScript code with modern languag
 
 ### 1. Scaffold TypeScript Node Project
 
-Creates a TypeScript Node.js project with modern tooling.
+Creates a TypeScript Node.js project with modern tooling (pnpm, Biome, Vite).
 
 ```bash
 #!/bin/bash
@@ -26,13 +26,12 @@ fi
 mkdir -p "$PROJECT_NAME/src"
 cd "$PROJECT_NAME"
 
-# Initialize npm project
-npm init -y
+# Initialize with pnpm
+pnpm init
 
 # Install TypeScript and tools
-npm install -D typescript @types/node tsx nodemon
-npm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin
-npm install -D prettier eslint-config-prettier
+pnpm add -D typescript @types/node tsx
+pnpm add -D @biomejs/biome vitest
 
 # Create tsconfig.json
 cat <<EOF > tsconfig.json
@@ -53,6 +52,27 @@ cat <<EOF > tsconfig.json
 }
 EOF
 
+# Create biome.json
+cat <<EOF > biome.json
+{
+  "\$schema": "https://biomejs.dev/schemas/2.0.0/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2
+  }
+}
+EOF
+
 # Create initial source file
 cat <<EOF > src/index.ts
 function main(): void {
@@ -63,13 +83,68 @@ main();
 EOF
 
 # Update package.json scripts
-npm pkg set scripts.dev="tsx watch src/index.ts"
-npm pkg set scripts.build="tsc"
-npm pkg set scripts.start="node dist/index.js"
-npm pkg set scripts.lint="eslint src/**/*.ts"
-npm pkg set scripts.format="prettier --write src/**/*.ts"
+pnpm pkg set scripts.dev="tsx watch src/index.ts"
+pnpm pkg set scripts.build="tsc"
+pnpm pkg set scripts.start="node dist/index.js"
+pnpm pkg set scripts.check="biome check --write src"
+pnpm pkg set scripts.format="biome format --write src"
+pnpm pkg set scripts.test="vitest"
 
 echo "TypeScript Node.js project created: $PROJECT_NAME"
+echo "Using: pnpm, Biome, tsx, Vitest"
+```
+
+### 2. Scaffold Frontend App
+
+Creates a modern frontend application based on the Tech Strategy (React 19 / Nuxt 4 / Next.js).
+
+```bash
+#!/bin/bash
+# create-frontend-app.sh
+# Usage: ./create-frontend-app.sh <project-name> <framework>
+# Frameworks: react, next, nuxt
+
+PROJECT_NAME=$1
+FRAMEWORK=$2
+
+if [ -z "$PROJECT_NAME" ] || [ -z "$FRAMEWORK" ]; then
+  echo "Usage: $0 <project-name> <framework>"
+  echo "Frameworks: react, next, nuxt"
+  exit 1
+fi
+
+case $FRAMEWORK in
+  react)
+    # React 19 + Vite + SWC
+    pnpm create vite "$PROJECT_NAME" --template react-swc-ts
+    cd "$PROJECT_NAME"
+    pnpm install
+    # Add Biome
+    pnpm add -D @biomejs/biome
+    pnpm pkg set scripts.check="biome check --write src"
+    ;;
+  next)
+    # Next.js (Locked to Turbopack as per strategy)
+    pnpm create next-app "$PROJECT_NAME" --typescript --tailwind --eslint --app --src-dir --import-alias "@/*" --use-pnpm --no-git
+    cd "$PROJECT_NAME"
+    # Note: Next.js uses ESLint by default, but we can add Biome for formatting
+    pnpm add -D @biomejs/biome
+    ;;
+  nuxt)
+    # Nuxt 4
+    pnpm dlx nuxi@latest init "$PROJECT_NAME" --packageManager pnpm
+    cd "$PROJECT_NAME"
+    ;;
+  *)
+    echo "Unknown framework: $FRAMEWORK"
+    exit 1
+    ;;
+esac
+
+echo "Frontend project created: $PROJECT_NAME ($FRAMEWORK)"
+echo "Next steps:"
+echo "  cd $PROJECT_NAME"
+echo "  pnpm dev"
 ```
 
 ## Feedback Loops
@@ -80,14 +155,19 @@ echo "TypeScript Node.js project created: $PROJECT_NAME"
 * **Action**: Run `tsc --noEmit`.
 * **Outcome**: Catch type errors early.
 
-### 2. Linting
+### 2. Linting & Formatting
 
 * **Trigger**: On save or Pre-commit.
-* **Action**: Run `eslint src/**/*.ts`.
-* **Outcome**: Enforce code quality and best practices.
+* **Action**: Run `biome check --write src`.
+* **Outcome**: Instant linting and formatting with Biome (replaces ESLint + Prettier).
 
-### 3. Formatting
+### 3. Testing
 
-* **Trigger**: On save.
-* **Action**: Run `prettier --write src/**/*.ts`.
-* **Outcome**: Consistent code style.
+* **Trigger**: Pre-commit or CI.
+* **Action**: Run `vitest` for unit and integration tests.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [TypeScript Instructions](../../instructions/typescript.instructions.md)
+
+

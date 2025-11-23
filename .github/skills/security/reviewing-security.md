@@ -70,4 +70,8 @@ Perform a manual review of critical code paths.
 
 * **Trigger**: High-risk feature or architectural change.
 * **Action**: Designated security champion reviews the design and implementation.
-* **Outcome**: Alignment with security standards and reduced risk.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Security Instructions](../../instructions/security.instructions.md)
+

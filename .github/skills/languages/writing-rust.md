@@ -34,7 +34,9 @@ fi
 cd "$PROJECT_NAME"
 
 # Add common dev dependencies
-cargo add --dev tokio --features full
+cargo add tokio --features full
+cargo add axum
+cargo add sqlx --features postgres,runtime-tokio
 cargo add serde --features derive
 cargo add anyhow thiserror
 
@@ -46,6 +48,11 @@ EOF
 
 # Update Cargo.toml with best practices
 cat <<EOF >> Cargo.toml
+
+# Mold linker for fast dev builds (Linux only)
+[target.x86_64-unknown-linux-gnu]
+linker = "clang"
+rustflags = ["-C", "link-arg=-fuse-ld=mold"]
 
 [profile.release]
 lto = true
@@ -75,4 +82,8 @@ echo "Run 'cargo build' to compile, 'cargo test' to run tests"
 
 * **Trigger**: On save.
 * **Action**: Run `cargo fmt`.
-* **Outcome**: Consistent code style.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Rust Instructions](../../instructions/rust.instructions.md)
+

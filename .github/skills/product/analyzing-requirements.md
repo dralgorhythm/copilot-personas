@@ -8,6 +8,8 @@ description: The process of eliciting, analyzing, documenting, and validating th
 ## Workflows
 <!-- Checklist for complex tasks -->
 - [ ] **Problem**: Is the problem statement clear and user-focused?
+- [ ] **Cost of Delay**: Have we quantified the economic impact of delay?
+- [ ] **Cognitive Load**: Does this feature introduce unnecessary complexity for the team?
 - [ ] **Ambiguity**: Are vague terms (fast, easy) quantified?
 - [ ] **Completeness**: Are edge cases and error states considered?
 - [ ] **Feasibility**: Is the requirement technically possible within constraints?
@@ -16,8 +18,8 @@ description: The process of eliciting, analyzing, documenting, and validating th
 ## Feedback Loops
 <!-- Validation steps -->
 1. Draft PRD.
-2. Review with Product Manager (Value).
-3. Review with Engineering (Feasibility).
+2. Review with Product Manager (Value & Cost of Delay).
+3. Review with Engineering (Feasibility & Cognitive Load).
 4. Review with Design (Usability).
 5. Finalize PRD.
 
@@ -47,21 +49,25 @@ cat <<EOF > "$FILENAME"
 *   **Who**: [Target User]
 *   **Why**: [Business Value]
 
-## 2. User Stories
+## 2. Economic Framework
+*   **Cost of Delay**: [High/Medium/Low - Justification]
+*   **Value Proposition**: [Revenue/Retention/Efficiency]
+
+## 3. User Stories
 | ID | As a... | I want to... | So that... |
 | :--- | :--- | :--- | :--- |
 | US-1 | [Role] | [Action] | [Benefit] |
 
-## 3. Functional Requirements
+## 4. Functional Requirements
 1.  [Requirement 1]
 2.  [Requirement 2]
 
-## 4. Non-Functional Requirements
+## 5. Non-Functional Requirements
 *   **Performance**: [Metric]
 *   **Security**: [Constraint]
 *   **Reliability**: [SLA]
 
-## 5. Acceptance Criteria (Gherkin)
+## 6. Acceptance Criteria (Gherkin)
 \`\`\`gherkin
 Scenario: [Name]
   Given [Context]
@@ -69,7 +75,7 @@ Scenario: [Name]
   Then [Outcome]
 \`\`\`
 
-## 6. Out of Scope
+## 7. Out of Scope
 *   [Item 1]
 EOF
 

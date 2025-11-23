@@ -63,4 +63,8 @@ Review code for common security vulnerabilities.
 
 * **Trigger**: Major release or periodic schedule.
 * **Action**: Simulate attacks against the application to find exploitable weaknesses.
-* **Outcome**: Detailed report of findings and remediation plan.
+
+## Resources
+<!-- Links to external docs or local reference files -->
+- [Security Instructions](../../instructions/security.instructions.md)
+

@@ -25,6 +25,21 @@ Brief description of what this instruction applies to and when it should be used
 *   **[Protocol Name]**: Testing requirement or guideline.
 </testing_protocols>
 
+## <tooling>
+*   **[Tool Category]**: [Tool Name] (Description/Usage)
+*   **[Tool Category]**: [Tool Name] (Description/Usage)
+</tooling>
+
+## <concepts>
+*   **[Concept Name]**: Definition or explanation of a key concept.
+*   **[Concept Name]**: Definition or explanation of a key concept.
+</concepts>
+
+## <visual_reasoning>
+*   **[Visual Guideline]**: Instruction for visual elements, UI/UX, or diagramming.
+*   **[Visual Guideline]**: Instruction for visual elements, UI/UX, or diagramming.
+</visual_reasoning>
+
 ## <additional_section>
 *   **[Item Name]**: Additional guidelines specific to this language or technology.
 *   **[Item Name]**: Additional guidelines specific to this language or technology.
