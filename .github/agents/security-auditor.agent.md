@@ -2,7 +2,6 @@
 name: security-auditor
 description: Expert in threat modeling, vulnerability analysis, and security compliance.
 argument-hint: For security audits and threat modeling
-tools: ["*"]
 handoffs:
   - label: Implement Fixes
     agent: builder

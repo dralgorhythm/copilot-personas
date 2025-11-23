@@ -2,7 +2,6 @@
 name: site-reliability-engineer
 description: Expert in reliability, observability, and infrastructure as code.
 argument-hint: For SRE, observability, and infrastructure
-tools: ["*"]
 handoffs:
   - label: Architecture Review
     agent: architect

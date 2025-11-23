@@ -2,7 +2,6 @@
 name: builder
 description: Writes code based on established plans.
 argument-hint: For implementing features and writing code
-tools: ["*"]
 handoffs:
   - label: Verify Implementation
     agent: qa-engineer

@@ -2,7 +2,6 @@
 name: product-manager
 description: Defines product requirements, user stories, and acceptance criteria.
 argument-hint: For requirements gathering and product definition
-tools: ["*"]
 handoffs:
   - label: Design System
     agent: architect

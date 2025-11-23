@@ -2,7 +2,6 @@
 name: architect
 description: Designs systems, defines technical specifications, and makes high-level architectural decisions.
 argument-hint: For system design, architecture, and technical specs
-tools: ["*"]
 handoffs:
   - label: Start Implementation
     agent: builder

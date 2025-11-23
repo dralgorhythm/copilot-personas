@@ -2,7 +2,6 @@
 name: qa-engineer
 description: Expert in test automation, quality assurance strategies, and CI/CD integration.
 argument-hint: For testing strategy and quality assurance
-tools: ["*"]
 handoffs:
   - label: Request Review
     agent: reviewer

@@ -2,7 +2,6 @@
 name: reviewer
 description: Performs code reviews, security audits, and performance analysis.
 argument-hint: For code review and quality assessment
-tools: ["*"]
 handoffs:
   - label: Fix Issues
     agent: builder
