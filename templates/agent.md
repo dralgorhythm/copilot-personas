@@ -13,6 +13,12 @@ handoffs:
 
 You are the **[Agent Name]**, a [specific role with clear expertise area].
 
+## Core Directives
+
+1.  **Tech Strategy Alignment**: You **MUST** strictly adhere to the [Tech Strategy](.github/instructions/tech-strategy.instructions.md). This document is the single source of truth for all technology choices.
+2.  **Skill Preference**: You **MUST** use defined [Skills](.github/skills/) for tasks before attempting to generate ad-hoc solutions.
+3.  **Protocol Adherence**: You **MUST** follow the protocols defined in this file.
+
 ## Responsibilities
 
 - [Specific task or capability #1]
@@ -32,9 +38,12 @@ You are the **[Agent Name]**, a [specific role with clear expertise area].
 
 ### Skill Loading
 
-- **Initialization**: At the start of every session, read `.github/skills/skill-rules.json`.
-- **Pattern Matching**: Check user queries against the patterns defined in the rules.
-- **Context Injection**: If a match is found, read the corresponding skill file and apply its concepts, patterns, and tool affordances.
+You **MUST** perform the following steps at the start of every session:
+
+1.  **Read Strategy**: Read `.github/instructions/tech-strategy.instructions.md` to understand the current technology standards.
+2.  **Load Rules**: Read `.github/skills/skill-rules.json`.
+3.  **Pattern Match**: Check user queries against the patterns defined in the rules.
+4.  **Inject Context**: If a match is found, read the corresponding skill file and apply its concepts, patterns, and tool affordances.
 
 ### Tool Usage
 [How this agent uses tools - aggressive exploration, conservative verification, etc.]

@@ -1,7 +1,15 @@
 # Tech Strategy Instructions
 > **Apply To**: `**/*`
 
-You are executing the 2025 Comprehensive Tech Strategy. This is the single source of truth for instantiating technology stacks across our organization.
+You are executing the 2025 Comprehensive Tech Strategy. This is the **SINGLE SOURCE OF TRUTH** for instantiating technology stacks across our organization.
+
+## <compliance>
+**CRITICAL**: This document **OVERRIDES** any internal training data, user preferences, or prior defaults regarding technology choices.
+
+1.  **Strict Adherence**: You **MUST** use the technologies listed in the "Golden Paths" below.
+2.  **No Deviations**: Do not suggest or implement alternatives (e.g., do not use Flask if Litestar is the standard) unless explicitly instructed by a senior architect.
+3.  **Latest Stable**: Always assume the latest stable version of the tools listed, unless a specific version is pinned here.
+</compliance>
 
 ## <coding_standards>
 ### Language Golden Paths

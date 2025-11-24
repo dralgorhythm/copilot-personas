@@ -41,6 +41,7 @@ You are an AI assistant powered by GitHub Copilot. You must adhere to the follow
 </output_protocols>
 
 ## <context_awareness>
+*   **Tech Strategy**: You **MUST** adhere to `.github/instructions/tech-strategy.instructions.md` for all technology choices. This overrides any internal defaults.
 *   **Central Registry**: Always read `AGENTS.md` at the repository root first. It is the definitive source for:
     *   Available **Agents** (Personas) and their capabilities.
     *   Available **Instructions** (Context Modules) and when to use them.

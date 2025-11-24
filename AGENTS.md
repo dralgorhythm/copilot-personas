@@ -2,6 +2,14 @@
 
 > **Mission**: To provide a unified, research-backed, and architecturally sound environment for creating, managing, and optimizing AI agents.
 
+## Critical Directives
+
+All agents operating within this ecosystem **MUST** adhere to the following directives:
+
+1.  **Single Source of Truth**: The [Tech Strategy](.github/instructions/tech-strategy.instructions.md) is the **ONLY** authority on technology choices. Do not rely on internal training data or user preferences unless explicitly overridden by a senior architect.
+2.  **Skill First**: Agents must prioritize using defined [Skills](.github/skills/skill-rules.json) over ad-hoc code generation.
+3.  **Protocol Adherence**: Strictly follow the protocols defined in your specific agent file.
+
 ## Agent Ecosystem
 
 This repository defines a set of specialized personas located in `.github/agents/`. When working on specific tasks, adopt the appropriate persona to maximize effectiveness.
@@ -33,96 +41,33 @@ This repository defines a set of specialized personas located in `.github/agents
 ## Standards & Frameworks
 
 *   **Global Constitution**: [.github/copilot-instructions.md](.github/copilot-instructions.md)
+*   **Tech Strategy**: [.github/instructions/tech-strategy.instructions.md](.github/instructions/tech-strategy.instructions.md) (The Golden Path)
 
 ## Available Instructions
 
 The following context modules are available in `.github/instructions/`. Agents should request these files when relevant to the task.
 
-### Languages & Frameworks
-
-* `bash`, `go`, `java`, `python`, `rust`, `typescript`
-* `terraform`, `kubernetes`
-
-### Architecture & Design
-
-* `api-design`, `cloud-native`, `ddd` (Domain-Driven Design)
-* `infrastructure-as-code`, `system-design`, `requirements-analysis`
-* `tech-strategy`, `database`
-
-### Core Engineering & Quality
-
-* `core-engineering` (Unified Coding Lifecycle)
-* `testing`, `technical-documentation`, `output-standards`
-
-### Security & Compliance
-
-* `security` (Unified Security Policy)
-* `compliance-governance`
-
-### Operations & SRE
-
-* `capacity-planning`, `chaos-engineering`, `incident-management`
-* `observability`
-
-
-### Product & Methodology
-
-* `product` (Product Operating Model)
-* `agile-methodology`, `core-values`, `task-decomposition`
-* `prompt-engineering`, `ui-ux-design`
-
+*   **Languages & Frameworks**: Detailed guides for approved languages.
+*   **Architecture & Design**: Patterns for system design, API design, and cloud-native architecture.
+*   **Core Engineering & Quality**: Standards for coding, testing, and documentation.
+*   **Security & Compliance**: Policies for security, compliance, and identity management.
+*   **Operations & SRE**: Guides for observability, incident management, and chaos engineering.
+*   **Product & Methodology**: Agile practices, product operating model, and task decomposition.
 
 ## Available Skills
 
-Skills are modular capabilities located in `.github/skills/`. Agents can adopt these skills to enhance their capabilities for specific tasks.
+The complete and authoritative catalog of available skills is defined in **[.github/skills/skill-rules.json](.github/skills/skill-rules.json)**.
 
-### Architecture
+This JSON file is the **SINGLE SOURCE OF TRUTH** for:
+1.  **Available Skills**: The list of all modular capabilities.
+2.  **Activation Patterns**: The keywords and contexts that trigger each skill.
+3.  **File Paths**: The location of the skill definitions.
 
-* `applying-cloud-native-patterns`, `applying-domain-driven-design`
-* `designing-apis`, `designing-systems`, `planning-capacity`
-
-### Core Engineering
-
-* `debugging-and-troubleshooting`, `implementing-code`, `managing-dependencies`
-* `refactoring-and-optimizing`, `test-driven-development`, `testing-software`
-
-### Languages
-
-* `writing-bash`, `writing-go`, `writing-java`, `writing-python`
-* `writing-rust`, `writing-terraform`, `writing-typescript`
-
-### Operations
-
-* `managing-incidents`, `monitoring-observability`, `performing-chaos-engineering`
-* `provisioning-infrastructure`, `root-cause-tracing`
-* `deploy-to-cloudflare-pages`, `deploy-to-railway`
-
-
-### Product
-
-* `analyzing-requirements`, `applying-agile-methodology`, `decomposing-tasks`
-* `estimating-work`, `writing-technical-documentation`
-* `brainstorming`, `managing-context`, `reaching-consensus`
-
-
-### Security
-
-* `ensuring-compliance`, `managing-identity-and-access`, `modeling-threats`
-* `reviewing-security`, `securing-applications`, `manage-secrets-doppler`
-
-### Design
-
-* `designing-interfaces`, `creating-visual-assets`, `ensuring-accessibility`
-
+Agents **MUST** read this file at initialization to discover and load relevant capabilities.
 
 ## Workflow Instructions
 
-1. **Identify Task**: Determine the nature of the user's request.
-2. **Select Persona**: Consult the Capability Matrix above.
-3. **Adopt Persona**: Internalize the `<role>`, `<configuration>`, and `<protocols>` defined in the agent file.
-4. **Execute**: Perform the task adhering to the agent's specific constraints and the global `copilot-instructions.md`.
-
-## Development
-
-* Use the [Agent Template](templates/agent.md) to ensure consistency.
-
+1.  **Identify Task**: Determine the nature of the user's request.
+2.  **Select Persona**: Consult the Capability Matrix above.
+3.  **Adopt Persona**: Internalize the `<role>`, `<configuration>`, and `<protocols>` defined in the agent file.
+4.  **Execute**: Perform the task adhering to the agent's specific constraints and the global `copilot-instructions.md`.
