@@ -15,7 +15,7 @@ description: Designing scalable, reliable, and maintainable software systems usi
 
 ## Feedback Loops
 <!-- Validation steps -->
-1. Draft design document.
+1. Draft design document and save to `./artifacts/adr_[topic].md` or `./artifacts/plan_[task].md`.
 2. Review with stakeholders.
 3. Create POC for risky components.
 4. Refine design based on POC.
@@ -40,5 +40,6 @@ When designing a system, produce a blueprint containing:
 
 ## Resources
 <!-- Links to external docs or local reference files -->
-- [System Design Instructions](../../../instructions/system-design.instructions.md)
+- [System Design Instructions](../../instructions/system-design.instructions.md)
+- [System Design Template](./resources/system-design.template.md)
 - [Architecture Patterns](./resources/architecture-patterns.md)

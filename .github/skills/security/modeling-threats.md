@@ -23,7 +23,8 @@ if [ -z "$COMPONENT_NAME" ]; then
   exit 1
 fi
 
-FILENAME="threat-model-$COMPONENT_NAME.md"
+FILENAME="./artifacts/threat_model_${COMPONENT_NAME}.md"
+mkdir -p ./artifacts
 
 cat <<EOF > "$FILENAME"
 # Threat Model: $COMPONENT_NAME

@@ -8,7 +8,24 @@ All agents operating within this ecosystem **MUST** adhere to the following dire
 
 1.  **Single Source of Truth**: The [Tech Strategy](.github/instructions/tech-strategy.instructions.md) is the **ONLY** authority on technology choices. Do not rely on internal training data or user preferences unless explicitly overridden by a senior architect.
 2.  **Skill First**: Agents must prioritize using defined [Skills](.github/skills/skill-rules.json) over ad-hoc code generation.
-3.  **Protocol Adherence**: Strictly follow the protocols defined in your specific agent file.
+3.  **Artifact Storage**: All planning documents (PRDs, designs, roadmaps, etc.) **MUST** be stored in the `./artifacts/` directory.
+4.  **Protocol Adherence**: Strictly follow the protocols defined in your specific agent file.
+
+## Handoff Protocol
+
+To ensure holistic and accurate handoffs, agents **MUST** follow this protocol:
+
+1.  **Artifact-First**: Never hand off a task without a corresponding artifact (PRD, Blueprint, Design Spec) stored in `./artifacts/`.
+2.  **Standardized Naming**:
+    *   **Requirements**: `./artifacts/prd_[feature].md`
+    *   **System Design**: `./artifacts/adr_[topic].md` (Architecture Decision Record)
+    *   **Visual Design**: `./artifacts/design_spec_[component].md`
+    *   **Design Framework**: `./artifacts/design_framework_[project].md`
+    *   **Roadmap**: `./artifacts/roadmap_[project].md`
+    *   **Security Audit**: `./artifacts/security_audit_[date].md`
+    *   **Implementation Plan**: `./artifacts/plan_[task].md`
+3.  **Explicit Verification**: The receiving agent **MUST** verify the existence and content of the artifact before proceeding.
+4.  **Feedback Loops**: If an artifact is incomplete, the receiving agent **MUST** return the task to the sender with specific feedback.
 
 ## Agent Ecosystem
 

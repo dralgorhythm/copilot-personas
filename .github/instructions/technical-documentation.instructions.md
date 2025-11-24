@@ -7,6 +7,7 @@ Guidelines for creating clear, comprehensive, and maintainable technical documen
 1.  **Format**: Use standard Markdown (CommonMark).
 2.  **Structure**: Every directory should have a `README.md`.
 3.  **Frontmatter**: Use YAML frontmatter for metadata where supported (e.g., Jekyll, Hugo).
+4.  **Storage Location**: All planning and design documents **MUST** be stored in the `./artifacts/` directory.
 </coding_standards>
 
 ## <best_practices>

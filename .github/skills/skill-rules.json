@@ -533,6 +533,61 @@
         "aria"
       ],
       "path": ".github/skills/design/ensuring-accessibility.md"
+    },
+    {
+      "name": "writing-prds",
+      "patterns": [
+        "prd",
+        "project requirement",
+        "requirements doc",
+        "user stories",
+        "functional requirements"
+      ],
+      "path": ".github/skills/product/writing-prds.md"
+    },
+    {
+      "name": "writing-pr-faqs",
+      "patterns": [
+        "pr/faq",
+        "press release",
+        "working backwards",
+        "internal faq",
+        "customer faq"
+      ],
+      "path": ".github/skills/product/writing-pr-faqs.md"
+    },
+    {
+      "name": "creating-execution-roadmaps",
+      "patterns": [
+        "roadmap",
+        "execution plan",
+        "project timeline",
+        "milestones",
+        "phased approach"
+      ],
+      "path": ".github/skills/product/creating-execution-roadmaps.md"
+    },
+    {
+      "name": "writing-adrs",
+      "patterns": [
+        "adr",
+        "architecture decision",
+        "architectural decision",
+        "decision record",
+        "trade-off analysis"
+      ],
+      "path": ".github/skills/architecture/writing-adrs.md"
+    },
+    {
+      "name": "using-design-frameworks",
+      "patterns": [
+        "design system",
+        "design framework",
+        "atomic design",
+        "design tokens",
+        "ui kit"
+      ],
+      "path": ".github/skills/design/using-design-frameworks.md"
     }
   ]
 }

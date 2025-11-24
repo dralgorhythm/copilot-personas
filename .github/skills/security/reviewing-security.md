@@ -17,7 +17,9 @@ Generate a markdown checklist for a manual security review.
 # Usage: ./scaffold-security-review.sh <ComponentName>
 
 COMPONENT=$1
-FILENAME="security-review-$COMPONENT.md"
+DATE=$(date +%Y_%m_%d)
+FILENAME="./artifacts/security_audit_${DATE}_${COMPONENT}.md"
+mkdir -p ./artifacts
 
 cat <<EOF > "$FILENAME"
 # Security Review: $COMPONENT

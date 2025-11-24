@@ -39,8 +39,8 @@ if [ -z "$PLAN_NAME" ]; then
   exit 1
 fi
 
-FILENAME="artifacts/plan_$PLAN_NAME.md"
-mkdir -p artifacts
+FILENAME="./artifacts/plan_$PLAN_NAME.md"
+mkdir -p ./artifacts
 
 cat <<EOF > "$FILENAME"
 # Plan: $PLAN_NAME

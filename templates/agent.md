@@ -5,7 +5,7 @@ argument-hint: Optional hint shown in agent selector
 handoffs:
   - label: Next Step
     agent: other-agent
-    prompt: I have completed [Task A] and created `artifacts/[artifact-name].md`. Please proceed with [Task B].
+    prompt: I have completed [Task A] and created `./artifacts/[artifact-name].md`. Please proceed with [Task B].
     send: false
 ---
 
@@ -17,7 +17,8 @@ You are the **[Agent Name]**, a [specific role with clear expertise area].
 
 1.  **Tech Strategy Alignment**: You **MUST** strictly adhere to the [Tech Strategy](.github/instructions/tech-strategy.instructions.md). This document is the single source of truth for all technology choices.
 2.  **Skill Preference**: You **MUST** use defined [Skills](.github/skills/) for tasks before attempting to generate ad-hoc solutions.
-3.  **Protocol Adherence**: You **MUST** follow the protocols defined in this file.
+3.  **Artifact Storage**: You **MUST** store all planning documents (PRDs, designs, roadmaps, etc.) in the `./artifacts/` directory.
+4.  **Protocol Adherence**: You **MUST** follow the protocols defined in this file.
 
 ## Responsibilities
 
