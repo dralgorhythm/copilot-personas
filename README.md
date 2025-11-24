@@ -1,6 +1,6 @@
 # Copilot Personas
 
-> **Drop-in agentic framework for GitHub Copilot**
+> **A Drop-in Agentic Framework for GitHub Copilot and VS Code**
 
 Transform your repository into an AI-powered development environment with specialized agents, reusable skills, and standardized workflows.
 
