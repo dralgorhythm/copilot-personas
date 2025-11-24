@@ -1,39 +1,40 @@
 ---
 name: managing-data
-description: Designing and implementing data strategies using Serverless PostgreSQL (Neon), Object Storage (R2), and Edge SQL (D1) following the Graduated Hosting Strategy.
+description: Designing and implementing data strategies using Postgres (Railway/AWS RDS), Object Storage (S3), and Vector Search (pgvector) following the Graduated Hosting Strategy.
 ---
 
 # Managing Data
 
 ## Workflows
 
-### 1. Provision Neon Database (Serverless Postgres)
+### 1. Provision Postgres Database (Railway)
 
-Sets up a Neon project with branching enabled.
+Sets up a Postgres database on Railway for the Agile tier.
 
 ```bash
-# Pseudo-command for Neon CLI
-neon project create --name my-app-db --region us-east-1
-# Enable branching for PRs
-neon branch create --name dev/feature-1
+# Using Railway CLI
+railway add postgres
 ```
 
-### 2. Configure Cloudflare R2 (Object Storage)
+### 2. Configure AWS S3 (Object Storage)
 
-Sets up an R2 bucket for zero-egress object storage.
+Sets up an S3 bucket for object storage.
 
 ```bash
-# Using Wrangler
-npx wrangler r2 bucket create my-app-assets
+# Using Terraform (via scaffolded module)
+module "s3_bucket" {
+  source = "./modules/s3"
+  bucket_name = "my-app-assets"
+  environment = "prod"
+}
 ```
 
-### 3. Configure Cloudflare D1 (Edge SQL)
+### 3. Enable pgvector
 
-Sets up a D1 database for edge-local data.
+Enables vector search capabilities in Postgres.
 
-```bash
-# Using Wrangler
-npx wrangler d1 create my-app-edge-db
+```sql
+CREATE EXTENSION IF NOT EXISTS vector;
 ```
 
 ## Feedback Loops
@@ -41,57 +42,48 @@ npx wrangler d1 create my-app-edge-db
 ### 1. Database Migrations
 
 * **Trigger**: Pre-deploy.
-* **Action**: Run migrations (e.g., `drizzle-kit push` or `prisma migrate`).
+* **Action**: Run migrations (e.g., `sqlx migrate run` or `prisma migrate deploy`).
 * **Outcome**: Schema is up-to-date without downtime.
 
-### 2. Branch Verification
+### 2. Local Verification
 
 * **Trigger**: Pull Request.
-* **Action**: Create Neon branch -> Run Tests against branch -> Delete branch.
-* **Outcome**: Isolated testing environment for every PR.
+* **Action**: Spin up local Docker Postgres -> Run Tests -> Tear down.
+* **Outcome**: Isolated testing environment.
 
 ## Reference Implementation
 
-### Connecting to Neon with Connection Pooling
+### Connecting to Postgres
 
 ```typescript
 // db.ts
-import { neonConfig, Pool } from '@neondatabase/serverless';
-import ws from 'ws';
+import { Pool } from 'pg';
 
-// Required for serverless environments
-neonConfig.webSocketConstructor = ws;
-
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false
+});
 
 export const query = async (text: string, params: any[]) => {
   return pool.query(text, params);
 };
 ```
 
-### Using Cloudflare R2 with S3 SDK
+### Using AWS S3 SDK
 
 ```typescript
 import { S3Client, PutObjectCommand } from "@aws-sdk/client-s3";
 
-const R2 = new S3Client({
-  region: "auto",
-  endpoint: `https://${process.env.ACCOUNT_ID}.r2.cloudflarestorage.com`,
-  credentials: {
-    accessKeyId: process.env.R2_ACCESS_KEY_ID,
-    secretAccessKey: process.env.R2_SECRET_ACCESS_KEY,
-  },
-});
+const s3 = new S3Client({ region: process.env.AWS_REGION });
 
-await R2.send(new PutObjectCommand({
-  Bucket: "my-bucket",
+await s3.send(new PutObjectCommand({
+  Bucket: process.env.AWS_BUCKET_NAME,
   Key: "hello.txt",
-  Body: "Hello R2!",
+  Body: "Hello S3!",
 }));
 ```
 
 ## Resources
 - [Database Instructions](../../instructions/database.instructions.md)
-
-- [Neon Documentation](https://neon.tech/docs)
-- [Cloudflare R2 Docs](https://developers.cloudflare.com/r2/)
+- [Railway Documentation](https://docs.railway.app/guides/postgresql)
+- [AWS S3 Documentation](https://docs.aws.amazon.com/s3/)

@@ -23,10 +23,10 @@ Guidelines for defining and executing a comprehensive testing plan that ensures 
 </testing_protocols>
 
 ## <tooling>
-*   **Unit/Integration**: Jest, Vitest (JS/TS); Pytest (Python); JUnit 5 (Java); XUnit (.NET).
+*   **Unit/Integration**: Jest, Vitest (JS/TS); Pytest (Python); XUnit (.NET).
 *   **E2E**: Playwright, Cypress, Selenium.
-*   **Mocks**: Mockito (Java), unittest.mock (Python).
-*   **Containers**: Testcontainers (Java/Go/Node) for real integration dependencies.
+*   **Mocks**: unittest.mock (Python).
+*   **Containers**: Testcontainers (Go/Node) for real integration dependencies.
 </tooling>
 
 ## <concepts>

@@ -9,7 +9,7 @@ description: Deploy an application to Railway (Agile Tier) for rapid prototyping
 <!-- Checklist for complex tasks -->
 - [ ] **Prerequisites**: Is the Railway CLI installed (`npm i -g @railway/cli`)?
 - [ ] **Project**: Is there a `railway.toml` or Dockerfile present?
-- [ ] **Secrets**: Are secrets synced from Doppler?
+- [ ] **Secrets**: Are secrets managed via Railway Variables?
 - [ ] **Service**: Is the service created in the Railway project?
 
 ## Feedback Loops

@@ -29,7 +29,7 @@ Foundational engineering principles and practices for building maintainable, sca
 *   **Linters**: ESLint, Pylint, Checkstyle (Enforce style and complexity rules)
 *   **Static Analysis**: SonarQube, CodeClimate (Detect bugs and security vulnerabilities)
 *   **Debuggers**: VS Code Debugger, pdb, dlv (Step-through debugging)
-*   **Profilers**: Chrome DevTools, PySpy, Java Flight Recorder (Performance analysis)
+*   **Profilers**: Chrome DevTools, PySpy (Performance analysis)
 </tooling>
 
 ## <additional_section>

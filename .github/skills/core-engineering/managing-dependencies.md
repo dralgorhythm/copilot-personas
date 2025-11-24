@@ -38,9 +38,6 @@ elif [ -f "yarn.lock" ]; then
 elif [ -f "poetry.lock" ]; then
   echo "Detected Python (Poetry) project. Running poetry check..."
   poetry check
-elif [ -f "pom.xml" ]; then
-  echo "Detected Java (Maven) project."
-  mvn dependency:analyze
 else
   echo "No supported lock file found."
   exit 1

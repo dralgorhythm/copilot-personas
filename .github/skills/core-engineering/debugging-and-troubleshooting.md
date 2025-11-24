@@ -37,7 +37,6 @@ date
 echo "--- Node/Runtime Versions ---"
 node -v || echo "Node not found"
 python3 --version || echo "Python not found"
-java -version 2>&1 || echo "Java not found"
 
 echo "--- Environment Variables (Safe) ---"
 env | grep -v -E "KEY|SECRET|TOKEN|PASSWORD" | sort

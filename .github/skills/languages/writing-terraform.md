@@ -1,6 +1,6 @@
 ---
 name: Writing Terraform
-description: Designing and implementing cloud infrastructure using Terraform's declarative configuration language (HCL). Note: This is primarily for legacy or strict compliance workloads. New AWS infrastructure should use SST v3 (Ion).
+description: Designing and implementing cloud infrastructure using Terraform's declarative configuration language (HCL).
 ---
 
 # Writing Terraform

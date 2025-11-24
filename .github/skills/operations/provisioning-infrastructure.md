@@ -1,36 +1,36 @@
 ---
 name: provisioning-infrastructure
-description: The ability to design, deploy, and manage infrastructure using code, following the Graduated Hosting Strategy with SST v3 (Ion).
+description: The ability to design, deploy, and manage infrastructure using code, following the Graduated Hosting Strategy with Terraform.
 ---
 
 # Provisioning Infrastructure
 
 ## Workflows
 <!-- Checklist for complex tasks -->
-- [ ] **Hosting Tier**: Which tier is this for? (Static/Cloudflare Pages, Agile/Railway, Production/AWS Fargate)
-- [ ] **IaC Tool**: Is SST v3 (Ion) being used for AWS infrastructure?
-- [ ] **Secrets**: Are secrets managed via Doppler and not committed?
+- [ ] **Hosting Tier**: Which tier is this for? (Static/GitHub Pages, Agile/Railway, Production/AWS)
+- [ ] **IaC Tool**: Is Terraform being used for AWS infrastructure?
+- [ ] **Secrets**: Are secrets managed via GitHub Secrets/AWS Secrets Manager and not committed?
 - [ ] **Review**: Has the infrastructure plan been reviewed before deployment?
 - [ ] **Tagging**: Are resources tagged with Owner, Environment, and CostCenter?
 - [ ] **Backup**: Is deletion protection enabled for stateful resources (DBs, Buckets)?
 
 ## Feedback Loops
 <!-- Validation steps -->
-1. Write IaC code (SST v3 TypeScript or Terraform).
-2. Run linter (`biome` for SST, `tflint` for Terraform).
-3. Run security scan (`tfsec` for Terraform).
-4. Run plan/preview (`sst deploy --stage dev` or `terraform plan`).
+1. Write IaC code (Terraform).
+2. Run linter (`tflint`).
+3. Run security scan (`tfsec`).
+4. Run plan (`terraform plan`).
 5. Apply to staging.
 6. Verify.
 
 ## Utility Scripts
 <!-- Reference executable scripts -->
-- `scaffold-sst-project.sh`: Creates a standard SST v3 project structure.
+- `scaffold-terraform-project.sh`: Creates a standard Terraform project structure.
 
 ```bash
 #!/bin/bash
-# scaffold-sst-project.sh
-# Usage: ./scaffold-sst-project.sh <ProjectName>
+# scaffold-terraform-project.sh
+# Usage: ./scaffold-terraform-project.sh <ProjectName>
 
 PROJECT_NAME=$1
 
@@ -42,67 +42,24 @@ fi
 mkdir -p "$PROJECT_NAME"
 cd "$PROJECT_NAME"
 
-# Initialize SST project
-pnpm create sst@latest
+# Create standard Terraform files
+touch main.tf variables.tf outputs.tf provider.tf
 
-# Create Doppler config reference
-cat <<EOF > .env.example
-# Use Doppler for secrets management
-# Run: doppler run -- sst deploy
-DOPPLER_TOKEN=<your-token>
-EOF
+# Create .gitignore
+echo ".terraform" >> .gitignore
+echo "*.tfstate" >> .gitignore
+echo "*.tfstate.backup" >> .gitignore
+echo ".env" >> .gitignore
 
-echo "SST v3 project scaffolded: $PROJECT_NAME"
-echo "Next steps:"
-echo "1. Configure Doppler: doppler setup"
-echo "2. Deploy to dev: doppler run -- sst deploy --stage dev"
+echo "Terraform project scaffolded: $PROJECT_NAME"
 ```
 
 ## Reference Implementation
 <!-- Code patterns -->
 
-### Secure S3 Bucket (SST v3)
+### Secure S3 Bucket (Terraform)
 
-Demonstrates encryption, versioning, and blocking public access using SST.
-
-```typescript
-// sst.config.ts
-import { Bucket } from "sst/constructs";
-
-export default {
-  config() {
-    return {
-      name: "my-app",
-      region: "us-east-1",
-    };
-  },
-  stacks(app) {
-    app.stack(function Stack({ stack }) {
-      // Secure S3 Bucket with SST
-      const bucket = new Bucket(stack, "SecureBucket", {
-        cdk: {
-          bucket: {
-            versioned: true,
-            encryption: s3.BucketEncryption.S3_MANAGED,
-            blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
-            removalPolicy: stack.stage === "prod" 
-              ? RemovalPolicy.RETAIN 
-              : RemovalPolicy.DESTROY,
-          },
-        },
-      });
-
-      stack.addOutputs({
-        BucketName: bucket.bucketName,
-      });
-    });
-  },
-};
-```
-
-### Terraform Alternative (Legacy)
-
-For teams not yet on SST, here's the Terraform equivalent:
+Demonstrates encryption, versioning, and blocking public access using Terraform.
 
 ```hcl
 # main.tf
@@ -152,6 +109,6 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
 ## Resources
 <!-- Links to external docs or local reference files -->
 - [Infrastructure as Code Instructions](../../instructions/infrastructure-as-code.instructions.md)
-- [SST v3 Documentation](https://sst.dev)
-- [Doppler Documentation](https://docs.doppler.com)
+- [Terraform Documentation](https://developer.hashicorp.com/terraform/docs)
+
 

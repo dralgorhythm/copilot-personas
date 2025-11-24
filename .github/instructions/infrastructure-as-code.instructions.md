@@ -4,10 +4,10 @@
 Guidelines for designing, deploying, and managing infrastructure using code, following the 2025 Graduated Hosting Strategy.
 
 ## <coding_standards>
-1.  **IaC Tool**: Use **SST v3 (Ion)** as the standard. TypeScript-based, bridges easy local dev with robust AWS primitives.
-2.  **Secrets Management**: Use **Doppler** as the unified control plane. Syncs to GitHub Actions, Railway, and AWS SSM.
-3.  **Authentication**: Use **OIDC** (OpenID Connect) for AWS/Cloudflare access. No long-lived keys.
-4.  **State Management**: SST manages state automatically. For raw Terraform, store state remotely and securely (encrypted, locked).
+1.  **IaC Tool**: Use **Terraform** as the standard for AWS. Use **Railway** configuration (toml/cli) for Agile tier.
+2.  **Secrets Management**: Use **GitHub Secrets** for CI/CD, **AWS Secrets Manager** for Prod, and **Railway Variables** for Agile.
+3.  **Authentication**: Use **OIDC** (OpenID Connect) for AWS access. No long-lived keys.
+4.  **State Management**: Store Terraform state remotely and securely (S3 + DynamoDB locking).
 5.  **Tagging**: Tag all resources with Owner, Environment, and CostCenter for cost attribution.
 </coding_standards>
 
@@ -25,18 +25,17 @@ Guidelines for designing, deploying, and managing infrastructure using code, fol
 </testing_protocols>
 
 ## <tooling>
-*   **IaC**: **SST v3 (Ion)** (TypeScript)
-*   **Secrets**: **Doppler**
+*   **IaC**: **Terraform**
+*   **Secrets**: **GitHub Secrets**, **AWS Secrets Manager**
 *   **CI/CD**: **GitHub Actions** with OIDC
-*   **Local S3**: **MinIO**
-*   **Local DB**: **Neon Local** (Docker)
+*   **Local DB**: **Postgres** (Docker)
 </tooling>
 
 ## <concepts>
 ### Graduated Hosting Strategy
-1.  **Static Tier (Frontend/Edge)**: Use **Cloudflare Pages** for SPAs and static sites. Maximum performance, zero maintenance.
-2.  **Agile Tier (PoC/MVP)**: Use **Railway** for rapid prototyping, internal tools, ephemeral environments. Zero-config deployment.
-3.  **Production Tier (Scale)**: Use **AWS Fargate** (serverless containers) for long-running services and compliance workloads.
+1.  **Static Tier (Frontend)**: Use **GitHub Pages** for SPAs and static sites.
+2.  **Agile Tier (PoC/MVP)**: Use **Railway** for rapid prototyping, internal tools, ephemeral environments.
+3.  **Production Tier (Scale)**: Use **AWS** (ECS/Fargate/Lambda) for long-running services and compliance workloads.
 
 ### Core Concepts
 1.  **Idempotency**: The property that applying the same configuration multiple times results in the same state.
@@ -46,14 +45,13 @@ Guidelines for designing, deploying, and managing infrastructure using code, fol
 
 ## <additional_section>
 ### Data Storage Strategy
-*   **Relational Database**: Use **Neon** (serverless PostgreSQL) with scale-to-zero and branching. Use **AWS RDS** for strict compliance.
-*   **Object Storage**: Use **Cloudflare R2** (zero egress fees, S3-compatible). Use **AWS S3 Glacier** for long-term archive.
-*   **Edge Data**: Use **Cloudflare Workers KV** for high-read config. Use **Cloudflare D1** (SQLite) for region-specific data.
+*   **Relational Database**: Use **Postgres** (Railway or AWS RDS).
+*   **Object Storage**: Use **AWS S3**.
+*   **Vector & AI**: Use **pgvector**.
 
 ### Local Development
-*   **S3 Emulation**: Use **MinIO** for S3-compatible local testing.
-*   **Database**: Use **Neon Local** (Docker) to support branching workflow locally.
-*   **Secrets**: Use `doppler run -- command` to inject secrets into local processes.
+*   **Database**: Use **Postgres** (Docker) to support branching workflow locally.
+*   **Secrets**: Use `.env` files (gitignored).
 </additional_section>
 
 
