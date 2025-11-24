@@ -1,42 +1,97 @@
-# Copilot Personas & Agentic Framework
+# Copilot Personas
 
-> **Mission**: To provide a unified, research-backed, and architecturally sound environment for creating, managing, and optimizing AI agents.
+> **Drop-in agentic framework for GitHub Copilot**
 
-This repository serves as a **template and research lab** for defining AI agents within the GitHub ecosystem. It provides a structured approach to "Agentic Engineering"—treating AI prompts and personas as code, with version control, standards, and modular architecture.
+Transform your repository into an AI-powered development environment with specialized agents, reusable skills, and standardized workflows.
 
-## 📂 Repository Structure
+## Quick Start
 
-### 1. The Agentic Framework (`.github/`)
+1. **Copy** `.github/` folder to your repository
+2. **Copy** `AGENTS.md` to your repository root
+3. **Customize** agents and instructions to match your tech stack
 
-This folder contains the operational "brain" of the repository. It is designed to be dropped into any project to instantly equip it with a team of specialized AI agents.
+## What's Inside
 
-* **`copilot-instructions.md`**: The "Global Constitution" or system prompt that governs all AI interactions.
-* **`AGENTS.md`**: The central registry of available personas and their capabilities.
-* **`agents/`**: Individual persona definitions (e.g., `architect.agent.md`, `builder.agent.md`).
-* **`instructions/`**: Context-aware rules injected based on file types (e.g., TypeScript rules, Security rules).
-* **`skills/`**: Modular capabilities and workflows that agents can adopt (e.g., `refactoring`, `debugging`).
+### `.github/agents/` — 8 Specialized AI Personas
+Pre-configured agents for every phase of development:
+- **Product Manager** → Requirements & user stories
+- **Architect** → System design & technical decisions
+- **UI/UX Designer** → Visual design & accessibility
+- **Builder** → Implementation & coding
+- **QA Engineer** → Testing & verification
+- **Reviewer** → Code review & quality assurance
+- **Site Reliability Engineer** → Infrastructure & operations
+- **Security Auditor** → Security compliance & audits
 
+### `.github/skills/` — Modular Workflows
+Reusable capabilities organized by domain:
+- `architecture/` — System design, API patterns, cloud architecture
+- `core-engineering/` — Coding standards, testing, debugging
+- `design/` — UI/UX workflows, accessibility, visual design
+- `languages/` — Language-specific best practices
+- `operations/` — DevOps, observability, incident response
+- `product/` — PRDs, roadmaps, user stories
+- `security/` — Threat modeling, compliance, auditing
 
-### 2. Templates (`templates/`)
+### `.github/instructions/` — Context-Aware Guidance
+Technical standards that auto-activate based on file type and context:
+- **Tech Strategy** → Golden Path for technology choices
+- **Language Guides** → Go, Rust, Python, TypeScript standards
+- **Architecture Patterns** → API design, event-driven systems
+- **Security Policies** → Authentication, secrets management
 
-This folder contains the reusable [Markdown templates](templates/) for defining new agents, skills, and instructions.
+### `templates/` — Extensibility
+Create new resources using standardized templates:
+- `agent.md` — Define new AI personas
+- `skill.md` — Add reusable workflows
+- `instruction.md` — Create context-aware rules
 
+## Key Concepts
 
-## 🚀 Getting Started
+### Agents & Handoffs
+Agents collaborate through **handoffs**—structured transitions that pass work between personas with explicit artifacts.
 
-### Using this Template
+**Example Flow**:
+```
+Product Manager → Architect → Builder → QA Engineer → Reviewer
+     (PRD)      →  (Design) →  (Code)  →  (Tests)  → (Approval)
+```
 
-1. Copy the `.github` folder to your repository.
-2. Add `AGENTS.md` to your repository root.
-3. Customize the agents in `.github/agents/` to match your tech stack.
+Each handoff includes:
+- **Artifact path** (e.g., `./artifacts/prd_feature.md`)
+- **Clear prompt** for the next agent
+- **Verification step** to ensure artifact quality
 
-### Creating a New Agent
+### Artifacts & Naming
+All planning documents use standardized naming in `./artifacts/`:
+- `prd_[feature].md` — Product requirements
+- `adr_[topic].md` — Architecture decisions
+- `design_spec_[component].md` — Visual designs
+- `roadmap_[project].md` — Execution roadmaps
+- `plan_[task].md` — Implementation plans
 
-1. Use the [Agent Template](templates/agent.md).
-2. Register your new agent in `AGENTS.md`.
+### Skill Activation
+Skills auto-load based on patterns defined in `.github/skills/skill-rules.json`. Agents check this file at initialization to discover relevant capabilities.
 
-## 🧠 Core Philosophy
+## Adding New Resources
 
-* **Security First**: Never bypass security controls.
-* **Token Economy**: Be concise and high-value.
-* **Architectural Integrity**: Treat prompts as software architecture.
+### New Agent
+1. Copy `templates/agent.md`
+2. Define identity, responsibilities, and handoffs
+3. Register in `AGENTS.md`
+
+### New Skill
+1. Copy `templates/skill.md`
+2. Define workflow and patterns
+3. Add activation rules to `skill-rules.json`
+
+### New Instruction
+1. Copy `templates/instruction.md`
+2. Define standards and compliance requirements
+3. Reference from relevant agents
+
+## Learn More
+
+- **[AGENTS.md](AGENTS.md)** — Complete agent registry and capability matrix
+- **[.github/copilot-instructions.md](.github/copilot-instructions.md)** — Global AI governance
+- **[Tech Strategy](.github/instructions/tech-strategy.instructions.md)** — Golden Path for technology choices
