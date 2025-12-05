@@ -59,6 +59,18 @@
       "path": ".github/skills/core-engineering/refactoring-and-optimizing.md"
     },
     {
+      "name": "refactoring-code",
+      "patterns": [
+        "refactor loop",
+        "optimize architecture",
+        "clean code",
+        "typescript strictness",
+        "cognitive resonance",
+        "refactoring engineer"
+      ],
+      "path": ".github/skills/core-engineering/refactoring-code.md"
+    },
+    {
       "name": "testing-strategy",
       "patterns": [
         "unit test",

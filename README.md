@@ -20,6 +20,7 @@ Pre-configured agents for every phase of development:
 - **Builder** → Implementation & coding
 - **QA Engineer** → Testing & verification
 - **Reviewer** → Code review & quality assurance
+- **Refactoring Engineer** → Code clean-up & optimization
 - **Site Reliability Engineer** → Infrastructure & operations
 - **Security Auditor** → Security compliance & audits
 
