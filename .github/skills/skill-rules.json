@@ -48,27 +48,29 @@
       "path": ".github/skills/core-engineering/managing-dependencies.md"
     },
     {
-      "name": "refactoring-optimization",
-      "patterns": [
-        "refactor",
-        "optimize",
-        "clean up",
-        "technical debt",
-        "performance tuning"
-      ],
-      "path": ".github/skills/core-engineering/refactoring-and-optimizing.md"
-    },
-    {
       "name": "refactoring-code",
       "patterns": [
-        "refactor loop",
-        "optimize architecture",
+        "refactor",
         "clean code",
-        "typescript strictness",
-        "cognitive resonance",
-        "refactoring engineer"
+        "structural improvement",
+        "extract method",
+        "technical debt",
+        "cognitive complexity"
       ],
       "path": ".github/skills/core-engineering/refactoring-code.md"
+    },
+    {
+      "name": "optimizing-code",
+      "patterns": [
+        "optimize",
+        "performance tuning",
+        "improve speed",
+        "reduce latency",
+        "memory usage",
+        "cache locality",
+        "big o"
+      ],
+      "path": ".github/skills/core-engineering/optimizing-code.md"
     },
     {
       "name": "testing-strategy",
